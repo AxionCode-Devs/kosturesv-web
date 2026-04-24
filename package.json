@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-  "name": "kosture_page",
-=======
   "name": "kosturesv-web",
->>>>>>> ce054c6124e2e1e5120587632b5837189e971fc8
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -19,11 +15,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
-<<<<<<< HEAD
     "@tailwindcss/postcss": "^4.2.4",
-=======
-    "@tailwindcss/vite": "^4.2.4",
->>>>>>> ce054c6124e2e1e5120587632b5837189e971fc8
     "@types/node": "^24.12.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
