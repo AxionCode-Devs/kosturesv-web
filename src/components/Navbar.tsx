@@ -17,6 +17,10 @@ export default function Navbar() {
       {/* MENÚ - Con espacio real (gap-12) */}
       <ul className="flex items-center gap-6 text-xs text-gray-700 tracking-widest uppercase font-medium">
         <li className="cursor-pointer hover:text-gray-900 transition-colors">
+          <Link to="/">Inicio</Link>
+        </li>
+        <span className="text-gray-300 select-none">•</span>
+        <li className="cursor-pointer hover:text-gray-900 transition-colors">
           <Link to="/">Catalogo</Link>
         </li>
         <span className="text-gray-300 select-none">•</span>
