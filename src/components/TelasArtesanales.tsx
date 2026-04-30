@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import telarProcesoBanner from "../assets/telar-proceso.jpg";
+import ScrollReveal from "./ScrollReveal";
 
 // 1. DEFINICIÓN DE INTERFACES (Arquitectura de la Información)
 // Explicación: Definimos un 'contrato' estricto para nuestro contenido editorial.
@@ -60,27 +61,27 @@ const TelasArtesanales: React.FC = () => {
   }, [location.pathname]);
 
   return (
-    <section className="bg-[#FAF8F5] min-h-screen font-sans pb-32 overflow-hidden">
+    <section className="bg-[#FFFDF9] min-h-screen font-sans pb-32 overflow-hidden">
       
       {/* HERO BANNER EDITORIAL */}
       {/* Explicación: Un banner inmersivo de pantalla media que establece el tono serio y profesional. */}
-      <div className="relative w-full h-[50vh] md:h-[70vh] bg-[#1E3A5F] flex items-center justify-center overflow-hidden">
+      <div className="relative w-full h-[50vh] md:h-[70vh] bg-[#1C2E3A] flex items-center justify-center overflow-hidden">
         {/* Fondo con la imagen real */}
         <img
           src={telarProcesoBanner}
           alt="Proceso de Telar Artesanal"
-          className="absolute inset-0 w-full h-full object-cover opacity-80"
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
           onError={(e) => { e.currentTarget.style.display = "none"; }}
         />
         
         {/* Overlay con gradiente para elegancia y lectura de texto */}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/30 to-[#FAF8F5]"></div>
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/20 to-[#FFFDF9]"></div>
         
         <div className="relative z-10 text-center px-6 max-w-4xl mx-auto transform translate-y-8">
-          <p className="text-[#D28C56] font-bold tracking-[0.3em] uppercase text-sm mb-4 animate-[fadeIn_1s_ease-out]">
-            Herencia & Tradición
-          </p>
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white tracking-wide drop-shadow-2xl mb-6 animate-[slideDown_0.8s_ease-out]">
+          <h1 
+            className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-wide drop-shadow-2xl mb-6 animate-[slideDown_0.8s_ease-out]"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
             Las Telas
           </h1>
           <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed max-w-2xl mx-auto animate-[fadeIn_1.5s_ease-out]">
@@ -91,17 +92,22 @@ const TelasArtesanales: React.FC = () => {
 
       {/* INTRODUCCIÓN CULTURAL */}
       <div className="max-w-4xl mx-auto px-6 pt-24 pb-16 text-center">
-        <div className="flex justify-center mb-6">
-          <div className="w-16 h-1 bg-[#D28C56]"></div>
-        </div>
-        <h2 className="text-3xl md:text-5xl font-bold text-[#1E3A5F] mb-8">
-          Más que un material,<br />una identidad
-        </h2>
-        <p className="text-lg md:text-xl text-[#5A4E46] leading-loose">
-          En Kosture, no vemos la tela como un simple insumo. Cada corte representa horas de tradición, 
-          técnicas heredadas y una profunda conexión con nuestras raíces salvadoreñas. 
-          Esta sección es un homenaje a esos materiales.
-        </p>
+        <ScrollReveal>
+          <div className="flex justify-center mb-6">
+            <div className="w-16 h-[1px] bg-[#1A9E8F]/50"></div>
+          </div>
+          <h2 
+            className="text-3xl md:text-5xl font-bold text-gray-900 mb-8"
+            style={{ fontFamily: "var(--font-heading)" }}
+          >
+            Más que un material,<br /><span className="italic font-normal text-[#1A9E8F]">una identidad</span>
+          </h2>
+          <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
+            En Kosture, no vemos la tela como un simple insumo. Cada corte representa horas de tradición, 
+            técnicas heredadas y una profunda conexión con nuestras raíces salvadoreñas. 
+            Esta sección es un homenaje a esos materiales.
+          </p>
+        </ScrollReveal>
       </div>
 
       {/* SECCIÓN ZIG-ZAG EDITORIAL (STORYTELLING) */}
@@ -110,23 +116,23 @@ const TelasArtesanales: React.FC = () => {
         {telasData.map((tela, index) => (
           <div 
             key={tela.id} 
-            className={`flex flex-col ${tela.revertido ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-24`}
+            className={`flex flex-col ${tela.revertido ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-20`}
           >
             {/* BLOQUE DE IMAGEN (ESQUELETO) */}
-            <div className="w-full lg:w-1/2 relative group">
-              {/* Decoración de fondo (Marco asimétrico) */}
-              <div className={`absolute -inset-4 bg-[#F0EBE1] rounded-3xl -z-10 transform transition-transform duration-700 group-hover:scale-105 ${tela.revertido ? '-rotate-3' : 'rotate-3'}`}></div>
+            <ScrollReveal className="w-full lg:w-1/2 relative group" delay={100}>
+              {/* Decoración de fondo (Marco asimétrico) adaptado al estilo inicio */}
+              <div className={`absolute -inset-4 md:-inset-5 border-2 border-[#1A9E8F]/15 rounded-xl -z-10 transition-all duration-500 group-hover:scale-105 ${tela.revertido ? 'translate-x-3 translate-y-3' : '-translate-x-3 -translate-y-3'}`}></div>
               
-              <div className="relative w-full aspect-[4/5] bg-[#E8E2D9] rounded-2xl overflow-hidden shadow-2xl flex flex-col items-center justify-center border border-[#DCD5C9] transition-transform duration-500 group-hover:-translate-y-2">
-                <svg className="w-20 h-20 text-[#B0A695] mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+              <div className="relative w-full aspect-[4/5] bg-gray-100 rounded-xl overflow-hidden shadow-lg flex flex-col items-center justify-center transition-transform duration-700 group-hover:scale-[1.02]">
+                <svg className="w-12 h-12 text-gray-300 mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                <span className="text-[#8B6A50] font-bold tracking-widest uppercase text-sm bg-white/50 px-4 py-2 rounded-full">
+                <span className="text-gray-400 font-semibold tracking-widest uppercase text-xs px-4 py-2">
                   Archivo: {tela.imagenPlaceholder}
                 </span>
                 
                 {/* Etiqueta de "Próximamente" */}
-                <div className="absolute top-6 right-6 bg-[#1E3A5F] text-white text-xs font-bold px-3 py-1 uppercase tracking-wider rounded-sm shadow-md">
+                <div className="absolute top-6 right-6 bg-[#1C2E3A] text-white text-[10px] font-bold px-4 py-1.5 uppercase tracking-[0.2em] rounded shadow-md">
                   Espacio Visual
                 </div>
 
@@ -134,36 +140,39 @@ const TelasArtesanales: React.FC = () => {
                 <img 
                   src={`/imagenes/${tela.imagenPlaceholder}`} 
                   alt={tela.nombre}
-                  className="absolute inset-0 z-10 w-full h-full object-cover opacity-100 transition-transform duration-1000 group-hover:scale-105"
+                  className="absolute inset-0 z-10 w-full h-full object-cover opacity-100 transition-transform duration-700 group-hover:scale-[1.03]"
                   onError={(e) => { 
                     e.currentTarget.style.opacity = "0";
                     e.currentTarget.style.pointerEvents = "none";
                   }}
                 />
               </div>
-            </div>
+            </ScrollReveal>
 
             {/* BLOQUE DE TEXTO */}
-            <div className="w-full lg:w-1/2 flex flex-col justify-center">
-              <div className="flex items-center gap-4 mb-6">
-                <span className="h-px w-16 bg-[#D28C56]"></span>
-                <span className="text-[#8B6A50] font-extrabold tracking-[0.2em] uppercase text-xs">
+            <ScrollReveal className="w-full lg:w-1/2 flex flex-col justify-center" delay={300}>
+              <div className="flex items-center gap-4 mb-4">
+                <span className="h-[1px] w-12 bg-gradient-to-r from-transparent to-[#1A9E8F]/50"></span>
+                <span className="text-[#1A9E8F] font-semibold tracking-[0.3em] uppercase text-[11px]">
                   0{index + 1} — Origen
                 </span>
               </div>
               
-              <h3 className="text-4xl lg:text-6xl font-extrabold text-[#1E3A5F] mb-6 leading-tight">
+              <h3 
+                className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight"
+                style={{ fontFamily: "var(--font-heading)" }}
+              >
                 {tela.nombre}
               </h3>
               
-              <h4 className="text-xl md:text-2xl text-[#D28C56] font-serif italic mb-8">
+              <h4 className="text-xl md:text-2xl text-gray-500 font-serif italic mb-8">
                 "{tela.descripcionBreve}"
               </h4>
               
-              <div className="text-lg text-[#5A4E46] leading-loose mb-10 opacity-90 transition-all duration-500">
+              <div className="text-base lg:text-lg text-gray-600 leading-relaxed mb-10 opacity-90 transition-all duration-500 text-justify">
                 <p>{tela.historia}</p>
                 {telaExpandida === tela.id && (
-                  <p className="mt-4 pt-4 border-t border-[#DCD5C9] animate-[fadeIn_0.5s_ease-out]">
+                  <p className="mt-4 pt-4 border-t border-gray-200 animate-[fadeIn_0.5s_ease-out]">
                     {tela.historiaExtendida}
                   </p>
                 )}
@@ -172,13 +181,12 @@ const TelasArtesanales: React.FC = () => {
               {/* Botón dinámico para expandir/colapsar historia */}
               <button 
                 onClick={() => toggleExpandir(tela.id)}
-                className="self-start relative overflow-hidden group px-10 py-4 border-2 border-[#1E3A5F] text-[#1E3A5F] font-bold tracking-widest uppercase text-sm transition-colors duration-500 hover:text-white"
+                className="self-start relative group inline-flex items-center text-[#1A9E8F] text-xs font-bold tracking-[0.2em] uppercase no-underline w-fit"
               >
-                <span className="absolute inset-0 bg-[#1E3A5F] transform -translate-x-full transition-transform duration-500 ease-out group-hover:translate-x-0 -z-10"></span>
-                <span className="relative z-10 flex items-center gap-2">
+                <span className="relative z-10 pb-1 flex items-center gap-2">
                   {telaExpandida === tela.id ? "Cerrar Historia" : "Leer Historia Completa"}
                   <svg 
-                    className={`w-4 h-4 transform transition-transform duration-300 ${telaExpandida === tela.id ? '-rotate-90' : 'group-hover:translate-x-2'}`} 
+                    className={`w-4 h-4 transform transition-transform duration-300 ${telaExpandida === tela.id ? '-rotate-90' : 'group-hover:translate-x-1'}`} 
                     fill="none" 
                     stroke="currentColor" 
                     viewBox="0 0 24 24"
@@ -186,8 +194,10 @@ const TelasArtesanales: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
                   </svg>
                 </span>
+                <span className="absolute bottom-0 left-0 w-full h-[1px] bg-[#1A9E8F]/30" />
+                <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#1A9E8F] transition-all duration-500 group-hover:w-full" />
               </button>
-            </div>
+            </ScrollReveal>
           </div>
         ))}
       </div>

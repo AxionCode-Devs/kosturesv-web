@@ -5,10 +5,7 @@ import ScrollReveal from "./ScrollReveal";
 const heroImages = [
   "/imagenes/carrusel-inicio/e.jpg",
   "/imagenes/carrusel-inicio/bolsos2.png",
-  "/imagenes/carrusel-inicio/IMG_3315.JPG",
-  "/imagenes/carrusel-inicio/IMG_3336.JPG",
-  "/imagenes/carrusel-inicio/IMG_3338.JPG",
-  "/imagenes/carrusel-inicio/IMG_3347.JPG",
+  "/imagenes/carrusel-inicio/origen_coleccion.png",
   "/imagenes/carrusel-inicio/wmremove-transformed.png"
 ];
 
@@ -285,86 +282,7 @@ export default function Hero() {
         </div>
       </div>
 
-      {/* ═══ SEPARADOR 2 ═══ */}
-      <div className="flex items-center justify-center py-10 gap-4">
-        <div className="h-[1px] w-16 md:w-28 bg-gradient-to-r from-transparent to-[#1A9E8F]/40" />
-        <svg className="w-6 h-6 text-[#1A9E8F]/40" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M9.64 7.64c.23-.5.36-1.05.36-1.64 0-2.21-1.79-4-4-4S2 3.79 2 6s1.79 4 4 4c.59 0 1.14-.13 1.64-.36L10 12l-2.36 2.36C7.14 14.13 6.59 14 6 14c-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4c0-.59-.13-1.14-.36-1.64L12 14l7 7h3v-1L9.64 7.64zM6 8c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm0 12c-1.1 0-2-.89-2-2s.9-2 2-2 2 .89 2 2-.9 2-2 2zm6-7.5c-.28 0-.5-.22-.5-.5s.22-.5.5-.5.5.22.5.5-.22.5-.5.5zM19 3l-6 6 2 2 7-7V3h-3z" />
-        </svg>
-        <div className="h-[1px] w-16 md:w-28 bg-gradient-to-l from-transparent to-[#1A9E8F]/40" />
-      </div>
 
-      {/* ═══ 4. CATEGORÍAS DESTACADAS ═══ */}
-      <div className="w-full px-4 md:px-10 py-16 max-w-[1400px] mx-auto">
-        <ScrollReveal>
-          <div className="text-center mb-14">
-            <span className="text-[11px] font-semibold text-[#1A9E8F] tracking-[0.3em] uppercase">
-              Explora
-            </span>
-            <h2
-              className="text-3xl md:text-4xl font-bold text-gray-900 mt-2"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              Categorías <span className="italic font-normal text-[#1A9E8F]">Destacadas</span>
-            </h2>
-          </div>
-        </ScrollReveal>
-
-        <div className="flex flex-col md:flex-row gap-5">
-          {/* Monederos */}
-          <ScrollReveal delay={100} className="w-full md:w-1/2">
-            <div className="relative h-[350px] md:h-[520px] group overflow-hidden rounded-xl cursor-pointer">
-              <img
-                src="/imagenes/monederos.jpg"
-                alt="Monederos"
-                className="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-all duration-500 group-hover:from-black/90" />
-              <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
-                <span className="text-gray-300 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">
-                  Hecho a mano
-                </span>
-                <h3 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wider mb-5 drop-shadow-md" style={{ fontFamily: "var(--font-heading)" }}>
-                  Monederos
-                </h3>
-                <Link
-                  to="/accesorios"
-                  state={{ filtroDeseado: "Monederos" }}
-                  className="bg-white text-gray-900 px-7 py-3 w-fit text-xs font-bold tracking-[0.15em] uppercase hover:bg-[#1A9E8F] hover:text-white transition-all duration-300 hover:-translate-y-0.5 rounded no-underline"
-                >
-                  Ver Productos
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
-
-          {/* Carteras */}
-          <ScrollReveal delay={250} className="w-full md:w-1/2">
-            <div className="relative h-[350px] md:h-[520px] group overflow-hidden rounded-xl cursor-pointer">
-              <img
-                src="/imagenes/cartera_trensada.png"
-                alt="Cartera Trenzada"
-                className="w-full h-full object-cover transition-transform duration-[1.2s] group-hover:scale-110"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent transition-all duration-500 group-hover:from-black/90" />
-              <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10">
-                <span className="text-gray-300 text-[10px] font-bold tracking-[0.3em] uppercase mb-2">
-                  Hecho a mano
-                </span>
-                <h3 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wider mb-5 drop-shadow-md" style={{ fontFamily: "var(--font-heading)" }}>
-                  Cartera Trenzada
-                </h3>
-                <Link
-                  to="/accesorios"
-                  className="bg-white text-gray-900 px-7 py-3 w-fit text-xs font-bold tracking-[0.15em] uppercase hover:bg-[#1A9E8F] hover:text-white transition-all duration-300 hover:-translate-y-0.5 rounded no-underline"
-                >
-                  Ver Productos
-                </Link>
-              </div>
-            </div>
-          </ScrollReveal>
-        </div>
-      </div>
     </section>
   );
 }

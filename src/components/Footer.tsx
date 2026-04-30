@@ -4,43 +4,6 @@ import ScrollReveal from "./ScrollReveal";
 export default function Footer() {
   return (
     <>
-      {/* ═══ CTA PRE-FOOTER ═══ */}
-      <section className="w-full bg-[#1A9E8F] py-16 md:py-20">
-        <div className="max-w-4xl mx-auto px-8 text-center">
-          <ScrollReveal>
-            <h2
-              className="text-3xl md:text-4xl font-bold text-white mb-4"
-              style={{ fontFamily: "var(--font-heading)" }}
-            >
-              ¿Lista para descubrir nuestros <span className="italic font-normal">productos</span>?
-            </h2>
-          </ScrollReveal>
-          <ScrollReveal delay={150}>
-            <p className="text-white/80 text-lg mb-8 max-w-2xl mx-auto">
-              Cada pieza está hecha con amor y dedicación artesanal. Encuentra tu accesorio perfecto.
-            </p>
-          </ScrollReveal>
-          <ScrollReveal delay={300}>
-            <div className="flex flex-wrap gap-4 justify-center">
-              <Link
-                to="/accesorios"
-                className="bg-white text-[#1A9E8F] px-8 py-3.5 text-sm font-bold tracking-[0.15em] uppercase hover:bg-gray-100 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg rounded no-underline"
-              >
-                Ver Productos
-              </Link>
-              <a
-                href="https://wa.me/50370279536"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-2 border-white/70 hover:border-white text-white px-8 py-3.5 text-sm font-bold tracking-[0.15em] uppercase hover:bg-white/10 transition-all duration-300 hover:-translate-y-0.5 rounded no-underline"
-              >
-                Contáctanos
-              </a>
-            </div>
-          </ScrollReveal>
-        </div>
-      </section>
-
       {/* ═══ FOOTER PRINCIPAL ═══ */}
       <footer className="w-full bg-[#1C2E3A] text-white">
         <div className="max-w-7xl mx-auto px-8 md:px-16 pt-16 pb-8">
@@ -94,13 +57,16 @@ export default function Footer() {
                 <a href="https://www.instagram.com/kosture.sv" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:border-[#1A9E8F] hover:text-[#1A9E8F] hover:scale-110 no-underline transition-all duration-300">
                   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
                 </a>
+                <a href="https://www.tiktok.com/@kosture.sv?lang=es-419" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full border border-white/20 flex items-center justify-center text-white/50 hover:border-[#1A9E8F] hover:text-[#1A9E8F] hover:scale-110 no-underline transition-all duration-300">
+                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 15.68a6.34 6.34 0 006.27 6.32 6.32 6.32 0 006.26-6.32V10.12a8.55 8.55 0 005 1.6V8.29a4.93 4.93 0 01-2.94-1.6z"/></svg>
+                </a>
               </div>
             </div>
           </div>
 
           {/* Copyright */}
           <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-white/30 text-xs">© 2025 Kosturé · Hecho con ❤️ en El Salvador</p>
+            <p className="text-white/30 text-xs">© 2026 Kosturé · Hecho con ❤️ en El Salvador</p>
             <p className="text-white/20 text-[10px]">Desarrollado por AxionCode</p>
           </div>
         </div>
