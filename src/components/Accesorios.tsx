@@ -226,73 +226,38 @@ const Accesorios: React.FC = () => {
             >
               <div
                 onClick={() => setProductoSeleccionado(item)}
-                className="w-full cursor-pointer group relative bg-white rounded-2xl p-6 shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 overflow-hidden transform hover:-translate-y-2 flex flex-col"
+                className="relative h-[350px] md:h-[450px] w-full group overflow-hidden cursor-pointer bg-black"
               >
-                {/* Decoración de textura/hilo en el fondo */}
-                <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#1A9E8F]/5 to-[#1C2E3A]/5 rounded-bl-full -z-10 group-hover:scale-110 transition-transform duration-500"></div>
+                <img
+                  src={item.imagen}
+                  alt={item.nombre}
+                  className="w-full h-full object-cover opacity-90 transition-transform duration-[2s] group-hover:scale-105 group-hover:opacity-100"
+                  onError={(e) => {
+                    e.currentTarget.style.display = "none";
+                  }}
+                />
+                
+                {/* Overlay Oscuro */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1C2E3A]/90 via-[#1C2E3A]/20 to-transparent transition-all duration-700 group-hover:from-[#1C2E3A]/80" />
+                
+                {/* Marco interno Lujo */}
+                <div className="absolute inset-4 border border-white/0 group-hover:border-white/30 transition-colors duration-[1s] pointer-events-none" />
 
-                <div className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-2/3 bg-[#1A9E8F] rounded-r-md opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                {/* ESPACIO PARA LA IMAGEN DEL PRODUCTO */}
-                <div className="w-full h-56 bg-gray-50 rounded-xl mb-6 overflow-hidden relative flex items-center justify-center">
-                  <span className="absolute text-gray-400 text-xs font-medium z-0">
-                    {item.imagen}
-                  </span>
-                  <img
-                    src={item.imagen}
-                    alt={item.nombre}
-                    className="w-full h-full object-cover relative z-10 transition-transform duration-700 group-hover:scale-105"
-                    onError={(e) => {
-                      e.currentTarget.style.display = "none";
-                    }}
-                  />
-                </div>
-
-                {/* CONTENIDO DEL TEXTO DEL PRODUCTO */}
-                <div className="flex flex-col flex-grow justify-between">
-                  <div>
-                    <div className="flex justify-between items-start mb-4">
-                      <span className="inline-block px-3 py-1 bg-gray-100 text-[#1C2E3A] text-[10px] font-bold rounded-full tracking-widest">
-                        {item.codigo}
-                      </span>
-                      <svg
-                        className="w-5 h-5 text-[#1A9E8F] opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-2 group-hover:translate-x-0"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          strokeWidth="2"
-                          d="M14 5l7 7m0 0l-7 7m7-7H3"
-                        />
-                      </svg>
-                    </div>
-
-                    <h3 
-                      className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-[#1A9E8F] transition-colors"
-                      style={{ fontFamily: "var(--font-heading)" }}
-                    >
-                      {item.nombre}
-                    </h3>
+                <div className="absolute inset-0 flex flex-col justify-end p-6 md:p-8 z-10">
+                  <div className="overflow-hidden mb-2">
+                    <span className="block text-[#7EC8BD] text-[10px] font-bold tracking-[0.4em] uppercase transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                      REF: {item.codigo}
+                    </span>
                   </div>
-
-                  <div className="mt-4 pt-4 border-t border-gray-100 flex items-center text-gray-500">
-                    <svg
-                      className="w-4 h-4 mr-2 text-gray-400"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
-                      />
-                    </svg>
-                    <span className="text-sm font-medium">{item.medidas}</span>
+                  <h3 
+                    className="text-white text-xl md:text-2xl font-bold uppercase tracking-wider mb-4 drop-shadow-md" 
+                    style={{ fontFamily: "var(--font-heading)" }}
+                  >
+                    {item.nombre}
+                  </h3>
+                  <div className="relative inline-flex items-center text-white/90 text-xs font-light tracking-[0.1em] w-fit">
+                    <span className="relative z-10 pb-1">{item.medidas}</span>
+                    <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#1A9E8F] transition-all duration-500 group-hover:w-full" />
                   </div>
                 </div>
               </div>
