@@ -9,6 +9,8 @@ import Footer from "./components/Footer";
 import WhatsAppButton from "./components/WhatsAppButton";
 import Accesorios from "./components/Accesorios";
 import TelasArtesanales from "./components/TelasArtesanales";
+import Catalogo from "./components/Catalogo";
+import CategoryView from "./components/CategoryView";
 import ScrollToTop from "./components/ScrollToTop";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -40,6 +42,8 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/catalogo" element={<Catalogo />} />
+          <Route path="/catalogo/:categoriaSlug" element={<CategoryView />} />
           <Route path="/accesorios" element={<Accesorios />} />
           <Route path="/telas" element={<TelasArtesanales />} />
         </Routes>

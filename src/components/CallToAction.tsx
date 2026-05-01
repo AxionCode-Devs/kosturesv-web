@@ -21,10 +21,10 @@ export default function CallToAction() {
         <ScrollReveal delay={300}>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link
-              to="/accesorios"
+              to="/catalogo"
               className="bg-white text-[#1A9E8F] px-8 py-3.5 text-sm font-bold tracking-[0.15em] uppercase hover:bg-gray-100 transition-all duration-300 hover:-translate-y-0.5 hover:shadow-lg rounded no-underline"
             >
-              Ver Productos
+              Ver Catálogo
             </Link>
             <a
               href="https://wa.me/50370279536"
