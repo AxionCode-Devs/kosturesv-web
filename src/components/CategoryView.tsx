@@ -217,7 +217,7 @@ export default function CategoryView() {
               {/* Botón de WhatsApp Premium */}
               <div className="pt-6 border-t border-gray-100">
                 <a
-                  href={`https://wa.me/50377764086?text=${encodeURIComponent(
+                  href={`https://wa.me/50370279536?text=${encodeURIComponent(
                     `Hola, me interesa adquirir el producto ${productoSeleccionado.nombre} (${productoSeleccionado.codigo}).\n\nReferencia visual: ${window.location.origin}${productoSeleccionado.imagen}`,
                   )}`}
                   target="_blank"

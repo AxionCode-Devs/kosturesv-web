@@ -366,7 +366,7 @@ const Accesorios: React.FC = () => {
               {/* hey majes no se les olvide cambiar este parte el numero de telefono tal cual esta el formato tienen que ponerlo y si tocan el codigo no lo cambies para que quede registro si a futuro se cambia. */}
               <div className="pt-6 border-t border-gray-100">
                 <a
-                  href={`https://wa.me/50377764086?text=${encodeURIComponent(
+                  href={`https://wa.me/50370279536?text=${encodeURIComponent(
                     `Hola, me interesa adquirir el producto ${productoSeleccionado.nombre} (${productoSeleccionado.codigo}).\n\nReferencia visual: ${window.location.origin}${productoSeleccionado.imagen}`,
                   )}`}
                   target="_blank"
