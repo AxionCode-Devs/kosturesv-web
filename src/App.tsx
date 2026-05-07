@@ -11,6 +11,7 @@ import Accesorios from "./components/Accesorios";
 import TelasArtesanales from "./components/TelasArtesanales";
 import Catalogo from "./components/Catalogo";
 import CategoryView from "./components/CategoryView";
+import Tiendas from "./components/Tiendas";
 import ScrollToTop from "./components/ScrollToTop";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -46,6 +47,7 @@ function App() {
           <Route path="/catalogo/:categoriaSlug" element={<CategoryView />} />
           <Route path="/accesorios" element={<Accesorios />} />
           <Route path="/telas" element={<TelasArtesanales />} />
+          <Route path="/tiendas" element={<Tiendas />} />
         </Routes>
         <Footer />
         <WhatsAppButton />

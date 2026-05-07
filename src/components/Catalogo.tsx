@@ -1,17 +1,41 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
+import bolsoTipoCartera from '../assets/bolso-tipo-cartera.jpg';
+import bolsoCuadrado from '../assets/bolso-cuadrado.jpg';
+import bolsoGrande from '../assets/Bolso-grande.jpg';
+import bolsoPompom from '../assets/bolso-pompom.jpg';
+
+import bandoleraImg from '../assets/bandolera.jpg';
+import bolsoMedialuna from '../assets/bolso-medialuna.jpg';
+import morralesImg from '../assets/morrales.jpg';
+import bandoleraMasc from '../assets/bandolera-masc.jpg';
+
+import bolsoAlmuerzo from '../assets/bolso-almuerzo.png';
+import mandil from '../assets/mandil.jpg';
+
 const slidesCollage = [
-  "/imagenes/categorias/bolsos-tipo-cartera.jpg",
-  "/imagenes/categorias/carteras-trenzadas.jpg",
-  "/imagenes/categorias/maxi-carteras.jpg"
+  bolsoTipoCartera,
+  bolsoGrande,
+  bolsoPompom
 ];
 
 const mainCategories = [
-  { title: 'Bolsos y Carteras', slug: 'bolsos-carteras', image: '/imagenes/categorias/bolsos-tipo-cartera.jpg' },
-  { title: 'Bandoleras y Morrales', slug: 'bandoleras-morrales', image: '/imagenes/categorias/bandoleras.jpg' },
-  { title: 'Monederos y Estuches', slug: 'monederos-estuches', image: '/imagenes/categorias/monederos.jpg' },
-  { title: 'Especialidades', slug: 'especialidades', image: '/imagenes/categorias/mandiles-denim.jpg' },
+  { 
+    title: 'Bolsos y Carteras', 
+    slug: 'bolsos-carteras', 
+    images: [bolsoTipoCartera, bolsoCuadrado, bolsoGrande, bolsoPompom] 
+  },
+  { 
+    title: 'Bandoleras y Morrales', 
+    slug: 'bandoleras-morrales', 
+    images: [bandoleraImg, bolsoMedialuna, morralesImg, bandoleraMasc] 
+  },
+  { 
+    title: 'Especialidades', 
+    slug: 'especialidades', 
+    images: [bolsoAlmuerzo, mandil, bolsoAlmuerzo, mandil] 
+  },
 ];
 
 export default function Catalogo() {
@@ -78,63 +102,45 @@ export default function Catalogo() {
             <Link 
               key={item.slug} 
               to={`/catalogo/${item.slug}`}
-              className="group relative block w-full bg-gray-900 rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500 border border-gray-100 hover:-translate-y-1 h-[280px]"
+              className="relative h-[350px] md:h-[450px] w-full group overflow-hidden bg-black block rounded-2xl"
             >
-              {/* Imagen de fondo cubriendo todo */}
-              <div className="absolute inset-0">
-                <span className="absolute inset-0 flex items-center justify-center text-gray-500 text-xs font-medium z-0">
-                  {item.image.split('/').pop()}
-                </span>
-                <img 
-                  src={item.image} 
-                  alt={item.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                  onError={(e) => {
-                    e.currentTarget.style.display = "none";
-                  }}
-                />
+              {/* COLLAGE DE FONDO */}
+              <div className="absolute inset-0 z-0 grid grid-cols-2 grid-rows-2">
+                {item.images.map((img, idx) => (
+                  <img 
+                    key={idx}
+                    src={img} 
+                    alt={`${item.title} ${idx}`} 
+                    className="w-full h-full object-cover opacity-80 transition-transform duration-[2s] group-hover:scale-110 group-hover:opacity-100"
+                    onError={(e) => {
+                      e.currentTarget.style.display = "none";
+                    }}
+                  />
+                ))}
               </div>
               
-              {/* Overlay base y efecto hover oscuro/brand */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-black/10 transition-colors duration-500 group-hover:from-[#1C2E3A]/90 group-hover:via-[#1C2E3A]/60 group-hover:to-[#1A9E8F]/30 z-10"></div>
+              {/* Overlay Oscuro */}
+              <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#1C2E3A] via-[#1C2E3A]/40 to-transparent transition-all duration-700 group-hover:from-[#1C2E3A]/90" />
               
-              {/* Contenido (Textos superpuestos) */}
-              <div className="absolute inset-0 z-20 p-6 md:p-8 flex flex-col justify-end">
-                <div className="flex justify-between items-end">
-                  <div className="flex-1 overflow-hidden pr-4">
-                    <span className="inline-block mb-3 px-3 py-1 bg-white/20 backdrop-blur-md text-white text-[10px] font-bold rounded-full tracking-widest border border-white/30 shadow-sm transition-colors duration-300 group-hover:bg-white/30">
-                      COLECCIÓN
-                    </span>
-                    
-                    <h3 
-                      className="text-2xl md:text-3xl font-bold text-white mb-2 leading-tight truncate transition-transform duration-300 transform group-hover:translate-x-1"
-                      style={{ fontFamily: "var(--font-heading)" }}
-                      title={item.title}
-                    >
-                      {item.title}
-                    </h3>
-                    
-                    <p className="text-white/80 text-sm line-clamp-1 md:line-clamp-2 max-w-md opacity-0 max-h-0 transition-all duration-500 group-hover:opacity-100 group-hover:max-h-20 group-hover:mt-3">
-                      Descubre nuestra exclusiva línea diseñada artesanalmente para tu estilo de vida.
-                    </p>
-                  </div>
-                  
-                  {/* Botón / Icono flotante derecho */}
-                  <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white/10 backdrop-blur-md flex items-center justify-center border border-white/30 group-hover:bg-white group-hover:border-white transition-all duration-500 shadow-lg">
-                    <svg
-                      className="w-5 h-5 text-white group-hover:text-[#1A9E8F] transform group-hover:translate-x-1 transition-transform duration-300"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth="2"
-                        d="M14 5l7 7m0 0l-7 7m7-7H3"
-                      />
-                    </svg>
-                  </div>
+              {/* Marco interno Lujo */}
+              <div className="absolute inset-4 z-20 border border-white/0 group-hover:border-white/30 transition-colors duration-[1s] pointer-events-none" />
+
+              {/* Texto */}
+              <div className="absolute inset-0 z-30 flex flex-col justify-end p-6 md:p-8 text-left">
+                <div className="overflow-hidden mb-2">
+                  <span className="block text-[#7EC8BD] text-[10px] font-bold tracking-[0.4em] uppercase transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
+                    COLECCIÓN
+                  </span>
+                </div>
+                <h3 
+                  className="text-white text-xl md:text-2xl font-bold uppercase tracking-wider mb-4 drop-shadow-md" 
+                  style={{ fontFamily: "var(--font-heading)" }}
+                >
+                  {item.title}
+                </h3>
+                <div className="relative inline-flex items-center text-white/90 text-xs font-sans tracking-[0.1em] w-fit">
+                  <span className="relative z-10 pb-1">Ver Categoría</span>
+                  <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#1A9E8F] transition-all duration-500 group-hover:w-full" />
                 </div>
               </div>
             </Link>

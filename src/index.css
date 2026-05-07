@@ -38,6 +38,18 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes highlight-pulse {
+  0% { box-shadow: 0 0 20px 6px rgba(26, 158, 143, 0.4); border-color: #1A9E8F; transform: scale(1.02); }
+  50% { box-shadow: 0 0 35px 10px rgba(26, 158, 143, 0.9); border-color: #26d4c0; transform: scale(1.03); }
+  100% { box-shadow: 0 0 20px 6px rgba(26, 158, 143, 0.4); border-color: #1A9E8F; transform: scale(1.02); }
+}
+
+.animate-highlight-pulse {
+  animation: highlight-pulse 0.8s ease-in-out infinite;
+  border-width: 3px !important;
+  border-style: solid;
+}
+
 /* Scrollbar sutil */
 ::-webkit-scrollbar { width: 8px; }
 ::-webkit-scrollbar-track { background: #FAF8F5; }

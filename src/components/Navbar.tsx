@@ -24,7 +24,7 @@ export default function Navbar() {
     { to: "/catalogo", label: "Catálogo", exact: false },
     { to: "/telas", label: "Telas Artesanales", exact: true },
     { to: "/accesorios", label: "Accesorios", exact: true },
-    { to: "/", label: "Tiendas", exact: false },
+    { to: "/tiendas", label: "Tiendas", exact: true },
   ];
 
   // Solo "Inicio" se marca activo en "/". Los demás solo si su ruta es única.
@@ -89,17 +89,18 @@ export default function Navbar() {
                     <div className="w-[60%] grid grid-cols-3 gap-6 p-8 pr-12">
                       {catalogData.map((category, index) => (
                         <div key={index}>
-                          <h3 className="text-[11px] font-bold text-[#2A3B4C] uppercase tracking-[0.15em] mb-5 border-b border-gray-100 pb-2">
-                            {category.title === "Pequeños Accesorios y Especiales" ? (
-                              <>Pequeños Accesorios<br/>y Especiales</>
-                            ) : (
-                              category.title
-                            )}
+                          <h3 className="text-[11px] font-bold uppercase tracking-[0.15em] mb-5 border-b border-gray-100 pb-2">
+                            <Link 
+                              to={`/catalogo/${category.slug}`} 
+                              className="text-[#2A3B4C] hover:text-[#1A9E8F] transition-colors duration-300 cursor-pointer block"
+                            >
+                              {category.title}
+                            </Link>
                           </h3>
                           <ul className="space-y-3">
                             {category.items.map(item => (
                               <li key={item.name}>
-                                <Link to={`/catalogo/${item.slug}`} className="text-[#516375] hover:text-[#1A9E8F] text-[13px] transition-colors duration-200 block leading-tight">
+                                <Link to={`/catalogo/${category.slug}#${item.hash}`} className="text-[#516375] hover:text-[#1A9E8F] text-[13px] transition-colors duration-200 block leading-tight">
                                   {item.name}
                                 </Link>
                               </li>
