@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useLocation } from "react-router-dom";
-import { catalogData } from "../data/catalogData";
 import { mockProducts, type Product } from "../data/mockProducts";
 import ScrollReveal from "./ScrollReveal";
 
