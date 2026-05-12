@@ -12,8 +12,8 @@ import bolsoHobo from '../assets/bolso-hobo.jpg';
 import bandoleraMasc from '../assets/bandolera-masc.jpg';
 import bolsoAlmuerzo from '../assets/bolso-almuerzo.png';
 import mandil from '../assets/mandil.jpg';
-import bolsoMultiusos from '../assets/multiusos.png';
-import bolsoTrenzado from '../assets/trenzada.png';
+import bolsoMultiusos from '../assets/multiusos.webp';
+import bolsoTrenzado from '../assets/trenzada.webp';
 
 export interface Product {
   codigo: string;
