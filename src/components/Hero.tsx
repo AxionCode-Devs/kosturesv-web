@@ -3,10 +3,10 @@ import { Link } from "react-router-dom";
 import ScrollReveal from "./ScrollReveal";
 
 const heroImages = [
-  "/imagenes/carrusel-inicio/e.jpg",
-  "/imagenes/carrusel-inicio/bolsos2.png",
-  "/imagenes/carrusel-inicio/origen_coleccion.png",
-  "/imagenes/carrusel-inicio/wmremove-transformed.png"
+  "/imagenes/carrusel-inicio/e.webp",
+  "/imagenes/carrusel-inicio/bolsos2.webp",
+  "/imagenes/carrusel-inicio/origen_coleccion.webp",
+  "/imagenes/carrusel-inicio/wmremove-transformed.webp"
 ];
 
 export default function Hero() {
@@ -148,7 +148,7 @@ export default function Hero() {
           <div className="relative group">
             <div className="absolute -top-4 -left-4 w-full h-full border-2 border-[#1A9E8F]/20 rounded-xl -z-10 transition-all duration-500 group-hover:-top-5 group-hover:-left-5" />
             <img
-              src="/imagenes/kosture.jpg"
+              src="/imagenes/kosture.webp"
               alt="Nuestra artesanía"
               className="w-full h-[450px] lg:h-[600px] object-cover rounded-xl shadow-lg transition-transform duration-700 group-hover:scale-[1.02]"
             />
@@ -273,7 +273,7 @@ export default function Hero() {
             <div className="relative group">
               <div className="absolute -top-4 -right-4 w-full h-full border-2 border-[#1A9E8F]/15 rounded-xl -z-10 transition-all duration-500 group-hover:-top-5 group-hover:-right-5" />
               <img
-                src="/imagenes/kostur2.jpg"
+                src="/imagenes/kostur2.webp"
                 alt="Nuestra pasión"
                 className="w-full h-[500px] lg:h-[850px] object-cover rounded-xl shadow-lg transition-transform duration-700 group-hover:scale-[1.02]"
               />

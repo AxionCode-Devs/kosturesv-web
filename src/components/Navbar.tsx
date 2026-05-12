@@ -45,7 +45,7 @@ export default function Navbar() {
         <div className="max-w-7xl mx-auto px-6 flex flex-col items-center relative">
           <Link to="/" className={`block transition-all duration-500 ${isScrolled ? "mb-1" : "mb-4"}`}>
             <img
-              src="/imagenes/logos/kosture-completo-sinfondo.png"
+              src="/imagenes/logos/kosture-completo-sinfondo.webp"
               alt="Kosturé Logo"
               className={`w-auto object-contain transition-all duration-500 hover:opacity-80 ${
                 isScrolled ? "h-16 md:h-20" : "h-24 md:h-32"
@@ -114,7 +114,7 @@ export default function Navbar() {
                     <div className="w-[40%] bg-gray-50/50 p-8 flex gap-6 border-l border-gray-100">
                       <Link to="/catalogo?coleccion=nueva" className="group block flex-1">
                         <div className="relative aspect-[3/4] mb-4 overflow-hidden rounded-[2px] bg-gray-200 shadow-sm">
-                          <img src="/imagenes/carrusel-inicio/origen_coleccion.png" alt="Nueva Colección" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                          <img src="/imagenes/carrusel-inicio/origen_coleccion.webp" alt="Nueva Colección" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                           <div className="absolute inset-0 bg-black/5 transition-colors group-hover:bg-transparent" />
                         </div>
                         <h4 className="text-[13px] font-bold text-[#2A3B4C] uppercase tracking-[0.1em] mb-1">Nueva Colección</h4>
@@ -125,7 +125,7 @@ export default function Navbar() {
                       
                       <Link to="/catalogo?coleccion=artesanos" className="group block flex-1">
                         <div className="relative aspect-[3/4] mb-4 overflow-hidden rounded-[2px] bg-gray-200 shadow-sm">
-                          <img src="/imagenes/ejemplo-telar.jpg" alt="Artesanos" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
+                          <img src="/imagenes/ejemplo-telar.webp" alt="Artesanos" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
                           <div className="absolute inset-0 bg-black/5 transition-colors group-hover:bg-transparent" />
                         </div>
                         <h4 className="text-[13px] font-bold text-[#2A3B4C] uppercase tracking-[0.1em] mb-1">Artesanos</h4>

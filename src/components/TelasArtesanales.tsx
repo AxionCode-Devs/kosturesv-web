@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import telarProcesoBanner from "../assets/telar-proceso.jpg";
+import telarProcesoBanner from "../assets/telar-proceso.webp";
 import ScrollReveal from "./ScrollReveal";
 
 // 1. DEFINICIÓN DE INTERFACES (Arquitectura de la Información)
@@ -24,7 +24,7 @@ const telasData: TelaArtesanal[] = [
     descripcionBreve: "La técnica ancestral que da color a nuestra identidad.",
     historia: "Nuestros textiles más vibrantes son creados en telares de palanca por artesanos salvadoreños. Esta técnica permite tejer patrones complejos y geométricos, utilizando hilos de algodón multicolor. Cada centímetro de esta tela representa horas de trabajo manual, siendo un legado que se transfiere de generación en generación para asegurar que nuestra herencia textil siga latiendo en el mundo moderno.",
     historiaExtendida: "El proceso de elaboración comienza desde la meticulosa selección del algodón, el cual es teñido a mano utilizando técnicas que aseguran colores vivos y duraderos. Luego, nuestros maestros artesanos dedican jornadas enteras en los telares de palanca tradicionales, entrelazando hilo a hilo. Esta dedicación no solo preserva un arte que está en peligro de desaparecer, sino que nos asegura entregar una pieza con alma, donde cada patrón geométrico cuenta una historia viva de nuestro pasado precolombino y nuestra identidad como cultura.",
-    imagenPlaceholder: "ejemplo-telar.jpg",
+    imagenPlaceholder: "ejemplo-telar.webp",
     revertido: false, // Imagen a la izquierda
   },
   {
@@ -33,7 +33,7 @@ const telasData: TelaArtesanal[] = [
     descripcionBreve: "Resistencia urbana con corazón artesanal.",
     historia: "El Denim (mezclilla) es la base de la resistencia de Kosture. Seleccionamos mezclilla de alta calidad por su extrema durabilidad. Lo que hace única a esta tela es su fusión: integramos franjas de telar artesanal o detalles de yute directamente sobre el denim. Esta combinación simboliza cómo la fuerza y el ritmo acelerado de la ciudad pueden convivir en perfecta armonía con la paciencia y el arte de lo hecho a mano.",
     historiaExtendida: "En la confección de bolsos y accesorios urbanos, el desgaste diario es un factor crítico. Por eso importamos Denim de gramaje superior, capaz de soportar el ritmo exigente de la vida moderna. Sin embargo, en Kosture nos negábamos a hacer 'una mochila más'. La magia ocurrió cuando decidimos coser, a mano y con extrema precisión, los coloridos parches de telar directamente sobre el Denim. Es un verdadero choque de mundos: la funcionalidad industrial del tejido vaquero se abraza con el calor humano de la artesanía salvadoreña.",
-    imagenPlaceholder: "ejemplo-denim.jpg",
+    imagenPlaceholder: "ejemplo-denim.webp",
     revertido: true, // Imagen a la derecha
   },
   {
@@ -42,7 +42,7 @@ const telasData: TelaArtesanal[] = [
     descripcionBreve: "La nobleza de la tierra en texturas orgánicas.",
     historia: "Complementamos nuestras creaciones con yute y otras fibras extraídas directamente de la naturaleza. Su textura rústica y tonos tierra aportan un contraste cálido y auténtico a cada pieza. Es un recordatorio constante de nuestro compromiso con las prácticas sustentables y de la belleza imperfecta, pero deslumbrante, de nuestro entorno natural.",
     historiaExtendida: "El yute es conocido mundialmente como la 'fibra dorada' por su brillo natural y su proceso de cultivo ecológico, el cual requiere muy poca agua y cero pesticidas, haciéndolo increíblemente amigable con nuestro planeta. En Kosture, aprovechamos su rigidez estructural para darle cuerpo a carteras y bolsos grandes. Al combinarlo con interiores suaves y costuras reforzadas, logramos piezas que no solo son hermosas a la vista y al tacto, sino que apoyan una economía circular y profundamente responsable con el medio ambiente.",
-    imagenPlaceholder: "ejemplo-yute.jpg",
+    imagenPlaceholder: "ejemplo-yute.webp",
     revertido: false, // Imagen a la izquierda
   },
 ];

@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
-import monederosBanner from "../assets/monederos-banner.jpg";
-import cosmetiquerasBanner from "../assets/cosmetiquera-banner.jpg";
-import estuchesBanner from "../assets/estuches-banner.jpg";
+import monederosBanner from "../assets/monederos-banner.webp";
+import cosmetiquerasBanner from "../assets/cosmetiquera-banner.webp";
+import estuchesBanner from "../assets/estuches-banner.webp";
 import ScrollReveal from "./ScrollReveal";
 
 // 1. DEFINICIÓN DE INTERFAZ (Tipado para nuestra arquitectura)
@@ -23,49 +23,49 @@ const accesorios: Accesorio[] = [
     codigo: "K001MNP",
     nombre: "Monedero Pequeño",
     medidas: "8 x 10 cm", // Alto x Ancho
-    imagen: "/imagenes/productos/K001MNP.jpg",
+    imagen: "/imagenes/productos/K001MNP.webp",
     categoria: "Monederos",
   },
   {
     codigo: "K019MN2",
     nombre: "Monedero Doble Zipper",
     medidas: "12 x 16 cm", // Alto x Ancho
-    imagen: "/imagenes/productos/K019MN2.jpg",
+    imagen: "/imagenes/productos/K019MN2.webp",
     categoria: "Monederos",
   },
   {
     codigo: "K043OPP",
     nombre: "Monedero Pequeño",
     medidas: "11 x 10 cm", // Alto x Ancho
-    imagen: "/imagenes/productos/K043OPP.jpg",
+    imagen: "/imagenes/productos/K043OPP.webp",
     categoria: "Monederos",
   },
   {
     codigo: "K044OCC",
     nombre: "Monedero Mediano",
     medidas: "12 x 11 cm", // Alto x Ancho
-    imagen: "/imagenes/productos/K044OCC.jpg",
+    imagen: "/imagenes/productos/K044OCC.webp",
     categoria: "Monederos",
   },
   {
     codigo: "K002CQ",
     nombre: "Cosmetiquera",
     medidas: "16 x 25 cm, base 5 cm",
-    imagen: "/imagenes/productos/K002CQ.jpg",
+    imagen: "/imagenes/productos/K002CQ.webp",
     categoria: "Cosmetiqueras",
   },
   {
     codigo: "K030CEL",
     nombre: "Estuche para Celular, de Mano",
     medidas: "14 x 21 cm", // Alto x Ancho
-    imagen: "/imagenes/productos/K030CEL.jpg",
+    imagen: "/imagenes/productos/K030CEL.webp",
     categoria: "Estuches",
   },
   {
     codigo: "K031CEL",
     nombre: "Estuche de Celular con Asa",
     medidas: "14 x 21 cm", // Alto x Ancho
-    imagen: "/imagenes/productos/K031CEL.jpg",
+    imagen: "/imagenes/productos/K031CEL.webp",
     categoria: "Estuches",
   },
 ];

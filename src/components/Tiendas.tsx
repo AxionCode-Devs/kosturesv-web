@@ -10,8 +10,8 @@ export default function Tiendas() {
             telefono: "+503 7027 9536",
             mapaUrl: "https://maps.app.goo.gl/kRiBsGxDBHp9zDwaA",
             iframeSrc: "https://maps.google.com/maps?q=Centro%20Comercial%20Galerias%2C%20San%20Salvador%2C%20El%20Salvador&t=&z=16&ie=UTF8&iwloc=&output=embed",
-            imgFront: "/imagenes/sucursal/sucursal_galerias.jpg",
-            imgInside: "/imagenes/sucursal/sucursal_galerias_productos.jpg",
+            imgFront: "/imagenes/sucursal/sucursal_galerias.webp",
+            imgInside: "/imagenes/sucursal/sucursal_galerias_productos.webp",
             imgAlt: "Kosture Galerías",
             reverse: false,
             imgObjectPos: "object-center"
@@ -24,8 +24,8 @@ export default function Tiendas() {
             telefono: "+503 7852 4033",
             mapaUrl: "https://maps.app.goo.gl/zk1kGfSD5q9SUmL86",
             iframeSrc: "https://maps.google.com/maps?q=Tienda%20Mipe%20Nahuizalco&t=&z=16&ie=UTF8&iwloc=&output=embed",
-            imgFront: "/imagenes/sucursal/sucursal_nahuizalco.png",
-            imgInside: "/imagenes/sucursal/sucursal_nahuizalco_productos.png",
+            imgFront: "/imagenes/sucursal/sucursal_nahuizalco.webp",
+            imgInside: "/imagenes/sucursal/sucursal_nahuizalco_productos.webp",
             imgAlt: "Kosture Tienda Mipe Nahuizalco",
             reverse: true,
             imgObjectPos: "object-center"
@@ -37,7 +37,7 @@ export default function Tiendas() {
             {/* IMAGEN DE CABECERA (BANNER) */}
             <div className="relative w-full h-64 md:h-96 lg:h-[450px] bg-[#1C2E3A] overflow-hidden">
                 <img
-                    src="/imagenes/sucursal/sucursal_galerias.jpg"
+                    src="/imagenes/sucursal/sucursal_galerias.webp"
                     alt="Banner Tiendas Kosture"
                     className="w-full h-full object-cover opacity-50 animate-[fadeIn_0.5s_ease-in-out] object-center"
                 />

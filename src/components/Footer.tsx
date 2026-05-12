@@ -10,7 +10,7 @@ export default function Footer() {
             {/* Logo + Descripción */}
             <div className="flex flex-col">
               <img
-                src="/imagenes/logos/kosture-completo-sinfondo.png"
+                src="/imagenes/logos/kosture-completo-sinfondo.webp"
                 alt="Kosturé"
                 className="h-24 md:h-32 w-auto object-contain opacity-90 mb-5 -ml-4"
               />

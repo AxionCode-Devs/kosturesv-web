@@ -9,7 +9,7 @@ export default function CategoriasDestacadas() {
       <ScrollReveal>
         <div 
           className="w-full h-[40vh] md:h-[50vh] relative mb-20 group cursor-pointer bg-fixed bg-cover bg-center"
-          style={{ backgroundImage: "url('/imagenes/monederos.png')" }}
+          style={{ backgroundImage: "url('/imagenes/monederos.webp')" }}
         >
           {/* Overlay Oscuro */}
           <div className="absolute inset-0 bg-black/50 transition-colors duration-700 group-hover:bg-black/40 flex flex-col justify-center items-center">
@@ -34,7 +34,7 @@ export default function CategoriasDestacadas() {
           <ScrollReveal delay={100} className="w-full md:w-1/2">
             <div className="relative h-[400px] md:h-[600px] group overflow-hidden cursor-pointer bg-black">
               <img
-                src="/imagenes/monederos.jpg"
+                src="/imagenes/monederos.webp"
                 alt="Monederos"
                 className="w-full h-full object-cover opacity-90 transition-transform duration-[2s] group-hover:scale-105 group-hover:opacity-100"
               />
@@ -67,7 +67,7 @@ export default function CategoriasDestacadas() {
           <ScrollReveal delay={250} className="w-full md:w-1/2">
             <div className="relative h-[400px] md:h-[600px] group overflow-hidden cursor-pointer bg-black">
               <img
-                src="/imagenes/bolsomorado.png"
+                src="/imagenes/bolsomorado.webp"
                 alt="Crossbody"
                 className="w-full h-full object-cover opacity-90 transition-transform duration-[2s] group-hover:scale-105 group-hover:opacity-100"
               />
@@ -103,7 +103,7 @@ export default function CategoriasDestacadas() {
       <ScrollReveal>
         <div 
           className="w-full h-[40vh] md:h-[50vh] relative mb-20 group cursor-pointer bg-fixed bg-cover bg-center"
-          style={{ backgroundImage: "url('/imagenes/carteras.png')" }}
+          style={{ backgroundImage: "url('/imagenes/carteras.webp')" }}
         >
           {/* Overlay Oscuro */}
           <div className="absolute inset-0 bg-black/60 transition-colors duration-700 group-hover:bg-black/50 flex flex-col justify-center items-center">
@@ -129,7 +129,7 @@ export default function CategoriasDestacadas() {
           <ScrollReveal delay={100} className="w-full md:w-1/2">
             <div className="relative h-[400px] md:h-[600px] group overflow-hidden cursor-pointer bg-black">
               <img
-                src="/imagenes/bolso_grande.png"
+                src="/imagenes/bolso_grande.webp"
                 alt="Bolsos Grandes"
                 className="w-full h-full object-cover opacity-90 transition-transform duration-[2s] group-hover:scale-105 group-hover:opacity-100"
               />
@@ -162,7 +162,7 @@ export default function CategoriasDestacadas() {
           <ScrollReveal delay={250} className="w-full md:w-1/2">
             <div className="relative h-[400px] md:h-[600px] group overflow-hidden cursor-pointer bg-black">
               <img
-                src="/imagenes/cartera_trensada.png"
+                src="/imagenes/cartera_trensada.webp"
                 alt="Cartera Trenzada"
                 className="w-full h-full object-cover opacity-90 transition-transform duration-[2s] group-hover:scale-105 group-hover:opacity-100"
               />

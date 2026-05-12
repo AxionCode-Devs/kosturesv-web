@@ -1,18 +1,18 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 
-import bolsoTipoCartera from '../assets/bolso-tipo-cartera.jpg';
-import bolsoCuadrado from '../assets/bolso-cuadrado.jpg';
-import bolsoGrande from '../assets/Bolso-grande.jpg';
-import bolsoPompom from '../assets/bolso-pompom.jpg';
+import bolsoTipoCartera from '../assets/bolso-tipo-cartera.webp';
+import bolsoCuadrado from '../assets/bolso-cuadrado.webp';
+import bolsoGrande from '../assets/Bolso-grande.webp';
+import bolsoPompom from '../assets/bolso-pompom.webp';
 
-import bandoleraImg from '../assets/bandolera.jpg';
-import bolsoMedialuna from '../assets/bolso-medialuna.jpg';
-import morralesImg from '../assets/morrales.jpg';
-import bandoleraMasc from '../assets/bandolera-masc.jpg';
+import bandoleraImg from '../assets/bandolera.webp';
+import bolsoMedialuna from '../assets/bolso-medialuna.webp';
+import morralesImg from '../assets/morrales.webp';
+import bandoleraMasc from '../assets/bandolera-masc.webp';
 
-import bolsoAlmuerzo from '../assets/bolso-almuerzo.png';
-import mandil from '../assets/mandil.jpg';
+import bolsoAlmuerzo from '../assets/bolso-almuerzo.webp';
+import mandil from '../assets/mandil.webp';
 
 const slidesCollage = [
   bolsoTipoCartera,

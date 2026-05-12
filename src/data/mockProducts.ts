@@ -1,17 +1,17 @@
-import bolsoTipoCartera from '../assets/bolso-tipo-cartera.jpg';
-import bolsoCuadrado from '../assets/bolso-cuadrado.jpg';
-import maxiCartera from '../assets/maxicartera.jpg';
-import bolsoGrande from '../assets/Bolso-grande.jpg';
-import bolsoPompom from '../assets/bolso-pompom.jpg';
-import bolsoBucket from '../assets/bolso-bucket.jpg';
-import bolsoPlayero from '../assets/Bolso-playero.jpg';
-import bandoleraImg from '../assets/bandolera.jpg';
-import bolsoMedialuna from '../assets/bolso-medialuna.jpg';
-import morralesImg from '../assets/morrales.jpg';
-import bolsoHobo from '../assets/bolso-hobo.jpg';
-import bandoleraMasc from '../assets/bandolera-masc.jpg';
-import bolsoAlmuerzo from '../assets/bolso-almuerzo.png';
-import mandil from '../assets/mandil.jpg';
+import bolsoTipoCartera from '../assets/bolso-tipo-cartera.webp';
+import bolsoCuadrado from '../assets/bolso-cuadrado.webp';
+import maxiCartera from '../assets/maxicartera.webp';
+import bolsoGrande from '../assets/Bolso-grande.webp';
+import bolsoPompom from '../assets/bolso-pompom.webp';
+import bolsoBucket from '../assets/bolso-bucket.webp';
+import bolsoPlayero from '../assets/Bolso-playero.webp';
+import bandoleraImg from '../assets/bandolera.webp';
+import bolsoMedialuna from '../assets/bolso-medialuna.webp';
+import morralesImg from '../assets/morrales.webp';
+import bolsoHobo from '../assets/bolso-hobo.webp';
+import bandoleraMasc from '../assets/bandolera-masc.webp';
+import bolsoAlmuerzo from '../assets/bolso-almuerzo.webp';
+import mandil from '../assets/mandil.webp';
 
 export interface Product {
   codigo: string;
@@ -26,7 +26,7 @@ export const mockProducts: Product[] = [
   // Bolsos y Carteras (/catalogo/bolsos-carteras)
   { nombre: 'Bolso Tipo Cartera', codigo: 'K013CA', medidas: '30 x 43 cm (Base: 27 x 14 cm)', categoriaSlug: 'bolsos-carteras', imagen: bolsoTipoCartera, origen: 'Hecho a mano en El Salvador' },
   { nombre: 'Bolso Cuadrado', codigo: 'K021BC', medidas: '30 x 30 cm (Base: 14 x 30 cm)', categoriaSlug: 'bolsos-carteras', imagen: bolsoCuadrado, origen: 'Hecho a mano en El Salvador' },
-  { nombre: 'Cartera Trenzada', codigo: 'K038TR', medidas: '31 x 40 cm (Base: 12 cm)', categoriaSlug: 'bolsos-carteras', imagen: '/placeholder.jpg', origen: 'Hecho a mano en El Salvador' },
+  { nombre: 'Cartera Trenzada', codigo: 'K038TR', medidas: '31 x 40 cm (Base: 12 cm)', categoriaSlug: 'bolsos-carteras', imagen: '/placeholder.webp', origen: 'Hecho a mano en El Salvador' },
   { nombre: 'Maxi Cartera', codigo: 'K039MAX', medidas: '40 x 42 cm (Base y lateral: 13 cm)', categoriaSlug: 'bolsos-carteras', imagen: maxiCartera, origen: 'Hecho a mano en El Salvador' },
   { nombre: 'Bolso Grande', codigo: 'K012BG', medidas: '40 x 42 cm (Base: 33 x 14 cm)', categoriaSlug: 'bolsos-carteras', imagen: bolsoGrande, origen: 'Hecho a mano en El Salvador' },
   { nombre: 'Bolso Pompom', codigo: 'K034POM', medidas: '27 x 41 cm (Base: 29 x 13 cm)', categoriaSlug: 'bolsos-carteras', imagen: bolsoPompom, origen: 'Hecho a mano en El Salvador' },
@@ -43,5 +43,5 @@ export const mockProducts: Product[] = [
   // Especialidades (/catalogo/especialidades)
   { nombre: 'Lonchera para Almuerzo', codigo: 'K036LON', medidas: '19 x 26 cm (Contorno: 17 x 19 cm)', categoriaSlug: 'especialidades', imagen: bolsoAlmuerzo, origen: 'Hecho a mano en El Salvador' },
   { nombre: 'Mandiles Denim', codigo: 'K028DDG', medidas: '77 x 71 cm (Talla única, asa ajustable)', categoriaSlug: 'especialidades', imagen: mandil, origen: 'Hecho a mano en El Salvador' },
-  { nombre: 'Bolso Multiusos', codigo: 'K020BS', medidas: '34 x 39 cm (Base: 5 cm)', categoriaSlug: 'especialidades', imagen: '/placeholder.jpg', origen: 'Hecho a mano en El Salvador' },
+  { nombre: 'Bolso Multiusos', codigo: 'K020BS', medidas: '34 x 39 cm (Base: 5 cm)', categoriaSlug: 'especialidades', imagen: '/placeholder.webp', origen: 'Hecho a mano en El Salvador' },
 ];
