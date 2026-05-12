@@ -4,6 +4,7 @@ import monederosBanner from "../assets/monederos-banner.webp";
 import cosmetiquerasBanner from "../assets/cosmetiquera-banner.webp";
 import estuchesBanner from "../assets/estuches-banner.webp";
 import ScrollReveal from "./ScrollReveal";
+import { useLanguage } from "../context/LanguageContext";
 
 // 1. DEFINICIÓN DE INTERFAZ (Tipado para nuestra arquitectura)
 export interface Accesorio {
@@ -113,6 +114,7 @@ const Accesorios: React.FC = () => {
     useState<Accesorio | null>(null);
   // Estado para el Collage del Banner Principal
   const [slideActivo, setSlideActivo] = useState(0);
+  const { t } = useLanguage();
 
   // 4. SCROLL AL INICIO (Para que el usuario siempre vea el banner principal att hector)
   useEffect(() => {
@@ -189,12 +191,10 @@ const Accesorios: React.FC = () => {
             className="text-3xl md:text-4xl font-bold text-gray-900 mb-4"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Piezas con <span className="italic font-normal text-[#1A9E8F]">Identidad</span>
+            {t.accesorios.sectionTitle} <span className="italic font-normal text-[#1A9E8F]">{t.accesorios.sectionTitleAccent}</span>
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Descubre nuestra línea de accesorios, donde los tonos azul denim y
-            tierra se entrelazan para crear piezas artesanales únicas.
-            Funcionalidad y herencia en cada puntada.
+            {t.accesorios.sectionDesc}
           </p>
         </ScrollReveal>
 
@@ -332,7 +332,7 @@ const Accesorios: React.FC = () => {
                 </h3>
 
                 <p className="text-gray-500 leading-relaxed mb-8 text-sm">
-                  Cada pieza es confeccionada a mano, fusionando técnicas tradicionales con un diseño pensado para la vida urbana contemporánea.
+                  {t.modal.craftDescription}
                 </p>
 
                 <div className="space-y-5 mb-10">
@@ -343,7 +343,7 @@ const Accesorios: React.FC = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-gray-900">Dimensiones</h4>
+                      <h4 className="text-sm font-bold text-gray-900">{t.modal.dimensions}</h4>
                       <p className="text-sm text-gray-500 mt-0.5">{productoSeleccionado.medidas}</p>
                     </div>
                   </div>
@@ -355,8 +355,8 @@ const Accesorios: React.FC = () => {
                       </svg>
                     </div>
                     <div>
-                      <h4 className="text-sm font-bold text-gray-900">Origen Artesanal</h4>
-                      <p className="text-sm text-gray-500 mt-0.5">Hecho a mano en El Salvador</p>
+                      <h4 className="text-sm font-bold text-gray-900">{t.modal.origin}</h4>
+                      <p className="text-sm text-gray-500 mt-0.5">{t.modal.originValue}</p>
                     </div>
                   </div>
                 </div>
@@ -367,7 +367,7 @@ const Accesorios: React.FC = () => {
               <div className="pt-6 border-t border-gray-100">
                 <a
                   href={`https://wa.me/50370279536?text=${encodeURIComponent(
-                    `Hola, me interesa adquirir el producto ${productoSeleccionado.nombre} (${productoSeleccionado.codigo}).\n\nReferencia visual: ${window.location.origin}${productoSeleccionado.imagen}`,
+                    t.modal.whatsappMsg(productoSeleccionado.nombre, productoSeleccionado.codigo, `${window.location.origin}${productoSeleccionado.imagen}`),
                   )}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -383,7 +383,7 @@ const Accesorios: React.FC = () => {
                   >
                     <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.299.045-.677.063-1.092-.069-.252-.08-.575-.187-.988-.365-1.739-.751-2.874-2.502-2.961-2.617-.087-.116-.708-.94-.708-1.793s.448-1.273.607-1.446c.159-.173.346-.217.462-.217l.332.006c.106.005.249-.04.39.298.144.347.491 1.2.534 1.287.043.087.072.188.014.304-.058.116-.087.188-.173.289l-.26.304c-.087.086-.177.18-.076.354.101.174.449.741.964 1.201.662.591 1.221.774 1.394.86s.274.072.376-.043c.101-.116.433-.506.549-.68.116-.173.231-.145.39-.087s1.011.477 1.184.564.289.13.332.202c.045.072.045.419-.1.824z" />
                   </svg>
-                  <span className="tracking-wide text-[13px] uppercase">Consultar Disponibilidad</span>
+                  <span className="tracking-wide text-[13px] uppercase">{t.modal.whatsappBtn}</span>
                 </a>
               </div>
             </div>

@@ -1,19 +1,10 @@
+import { useLanguage } from "../context/LanguageContext";
+
 export default function Marquee() {
-  const palabras = [
-    "HECHO A MANO EN EL SALVADOR",
-    "✦",
-    "DISEÑO EXCLUSIVO",
-    "✦",
-    "MODA SOSTENIBLE",
-    "✦",
-    "PIEZAS ÚNICAS",
-    "✦",
-    "ARTESANÍA PREMIUM",
-    "✦",
-  ];
+  const { t } = useLanguage();
 
   // Triplicamos el array para asegurar que cubra toda la pantalla y el bucle sea perfecto
-  const contenidoMarquee = [...palabras, ...palabras, ...palabras];
+  const contenidoMarquee = [...t.marquee.words, ...t.marquee.words, ...t.marquee.words];
 
   return (
     <div className="w-full bg-[#1A9E8F] py-3 md:py-4 overflow-hidden border-y border-white/20 shadow-inner">

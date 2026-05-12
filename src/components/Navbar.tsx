@@ -1,12 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { catalogData } from "../data/catalogData";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileOpen, setIsMobileOpen] = useState(false);
   const [isCatalogOpen, setIsCatalogOpen] = useState(false);
   const location = useLocation();
+  const { t, lang, toggleLang } = useLanguage();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 60);
@@ -20,11 +22,11 @@ export default function Navbar() {
   }, [location.pathname]);
 
   const navLinks = [
-    { to: "/", label: "Inicio", exact: true },
-    { to: "/catalogo", label: "Catálogo", exact: false },
-    { to: "/telas", label: "Telas Artesanales", exact: true },
-    { to: "/accesorios", label: "Accesorios", exact: true },
-    { to: "/tiendas", label: "Tiendas", exact: true },
+    { to: "/", label: t.nav.home, exact: true },
+    { to: "/catalogo", label: t.nav.catalog, exact: false },
+    { to: "/telas", label: t.nav.fabrics, exact: true },
+    { to: "/accesorios", label: t.nav.accessories, exact: true },
+    { to: "/tiendas", label: t.nav.stores, exact: true },
   ];
 
   // Solo "Inicio" se marca activo en "/". Los demás solo si su ruta es única.
@@ -58,14 +60,14 @@ export default function Navbar() {
             {navLinks.map((link) => (
               <li 
                 key={link.label}
-                onMouseEnter={link.label === "Catálogo" ? () => setIsCatalogOpen(true) : undefined}
-                onMouseLeave={link.label === "Catálogo" ? () => setIsCatalogOpen(false) : undefined}
-                className={link.label === "Catálogo" ? "" : ""}
+                onMouseEnter={link.to === "/catalogo" ? () => setIsCatalogOpen(true) : undefined}
+                onMouseLeave={link.to === "/catalogo" ? () => setIsCatalogOpen(false) : undefined}
+                className={link.to === "/catalogo" ? "" : ""}
               >
                 <Link
                   to={link.to}
                   className={`text-[11px] tracking-[0.2em] uppercase font-semibold no-underline transition-colors duration-300 py-2 ${
-                    isActive(link) || (link.label === "Catálogo" && isCatalogOpen)
+                    isActive(link) || (link.to === "/catalogo" && isCatalogOpen)
                       ? "text-[#1A9E8F]"
                       : "text-[#2A3B4C] hover:text-[#1A9E8F]"
                   }`}
@@ -74,7 +76,7 @@ export default function Navbar() {
                 </Link>
 
                 {/* MEGA MENÚ CATÁLOGO */}
-                {link.label === "Catálogo" && (
+                {link.to === "/catalogo" && (
                   <div
                     className={`absolute top-full left-6 right-6 bg-white shadow-2xl rounded-sm transition-all duration-300 ease-in-out border border-gray-100 cursor-default flex overflow-hidden ${
                       isCatalogOpen
@@ -140,16 +142,29 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* HAMBURGER */}
-          <button
-            onClick={() => setIsMobileOpen(!isMobileOpen)}
-            className="md:hidden absolute right-6 top-1/2 -translate-y-1/2 flex flex-col items-center justify-center gap-[5px]"
-            aria-label="Menú"
-          >
-            <span className={`block w-6 h-[2px] bg-[#2A3B4C] transition-all duration-300 ${isMobileOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
-            <span className={`block w-6 h-[2px] bg-[#2A3B4C] transition-all duration-300 ${isMobileOpen ? "opacity-0" : ""}`} />
-            <span className={`block w-6 h-[2px] bg-[#2A3B4C] transition-all duration-300 ${isMobileOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
-          </button>
+          {/* LANGUAGE TOGGLE + HAMBURGER */}
+          <div className="absolute right-6 top-1/2 -translate-y-1/2 flex items-center gap-4">
+            <button
+              onClick={toggleLang}
+              className="flex items-center gap-1 text-[10px] font-bold tracking-widest uppercase text-[#2A3B4C] hover:text-[#1A9E8F] transition-colors duration-300"
+              aria-label="Change language"
+            >
+              <span className={lang === 'es' ? 'text-[#1A9E8F]' : 'text-[#2A3B4C]/40'}>ES</span>
+              <span className="text-gray-300">|</span>
+              <span className={lang === 'en' ? 'text-[#1A9E8F]' : 'text-[#2A3B4C]/40'}>EN</span>
+            </button>
+
+            {/* HAMBURGER */}
+            <button
+              onClick={() => setIsMobileOpen(!isMobileOpen)}
+              className="md:hidden flex flex-col items-center justify-center gap-[5px]"
+              aria-label="Menú"
+            >
+              <span className={`block w-6 h-[2px] bg-[#2A3B4C] transition-all duration-300 ${isMobileOpen ? "rotate-45 translate-y-[7px]" : ""}`} />
+              <span className={`block w-6 h-[2px] bg-[#2A3B4C] transition-all duration-300 ${isMobileOpen ? "opacity-0" : ""}`} />
+              <span className={`block w-6 h-[2px] bg-[#2A3B4C] transition-all duration-300 ${isMobileOpen ? "-rotate-45 -translate-y-[7px]" : ""}`} />
+            </button>
+          </div>
         </div>
       </nav>
 

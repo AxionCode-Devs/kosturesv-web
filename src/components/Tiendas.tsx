@@ -1,6 +1,8 @@
 import ScrollReveal from "./ScrollReveal";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Tiendas() {
+    const { t } = useLanguage();
     const sucursales = [
         {
             id: 1,
@@ -47,7 +49,7 @@ export default function Tiendas() {
                         className="text-4xl md:text-6xl font-bold text-white tracking-widest drop-shadow-md uppercase mb-4 animate-[slideDown_0.5s_ease-out]"
                         style={{ fontFamily: "var(--font-heading)" }}
                     >
-                        Nuestras Tiendas
+                        {t.tiendas.title}
                     </h1>
                     <div className="h-1 w-24 bg-[#1A9E8F] rounded-full animate-[fadeIn_1s_ease-out]"></div>
                 </div>

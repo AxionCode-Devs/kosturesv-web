@@ -1,7 +1,9 @@
 import { Link } from "react-router-dom";
 import ScrollReveal from "./ScrollReveal";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function CategoriasDestacadas() {
+  const { t } = useLanguage();
   return (
     <section className="w-full bg-[#FFFDF9]">
       
@@ -20,7 +22,7 @@ export default function CategoriasDestacadas() {
               className="text-white text-4xl md:text-6xl font-bold uppercase tracking-[0.2em] drop-shadow-2xl z-10"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              Nuestros <span className="italic font-normal text-white">Accesorios</span>
+              {t.categories.banner1Title} <span className="italic font-normal text-white">{t.categories.banner1TitleAccent}</span>
             </h3>
           </div>
         </div>
@@ -46,17 +48,17 @@ export default function CategoriasDestacadas() {
               <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 z-10">
                 <div className="overflow-hidden mb-2">
                   <span className="block text-[#7EC8BD] text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    Piezas Únicas
+                    {t.categories.card1Label}
                   </span>
                 </div>
                 <h3 className="text-white text-3xl md:text-4xl font-bold uppercase tracking-widest mb-6 drop-shadow-md" style={{ fontFamily: "var(--font-heading)" }}>
-                  Monederos
+                  {t.categories.card1Title}
                 </h3>
                 <Link
                   to="/accesorios"
                   className="group/btn relative inline-flex items-center text-white text-xs font-bold tracking-[0.2em] uppercase no-underline w-fit"
                 >
-                  <span className="relative z-10 pb-1">Descubrir</span>
+                  <span className="relative z-10 pb-1">{t.categories.card1Cta}</span>
                   <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#1A9E8F] transition-all duration-500 group-hover/btn:w-full" />
                 </Link>
               </div>
@@ -79,7 +81,7 @@ export default function CategoriasDestacadas() {
               <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10 z-10">
                 <div className="overflow-hidden mb-2">
                   <span className="block text-[#7EC8BD] text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    Estilo de vida
+                    {t.categories.card2Label}
                   </span>
                 </div>
                 <h3 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wider mb-6 drop-shadow-md" style={{ fontFamily: "var(--font-heading)" }}>
@@ -89,7 +91,7 @@ export default function CategoriasDestacadas() {
                   to="/accesorios"
                   className="group/btn relative inline-flex items-center text-white text-xs font-bold tracking-[0.2em] uppercase no-underline w-fit"
                 >
-                  <span className="relative z-10 pb-1">Ver Diseño</span>
+                  <span className="relative z-10 pb-1">{t.categories.card2Cta}</span>
                   <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#1A9E8F] transition-all duration-500 group-hover/btn:w-full" />
                 </Link>
               </div>
@@ -114,8 +116,8 @@ export default function CategoriasDestacadas() {
               className="text-white text-3xl md:text-5xl font-bold tracking-[0.1em] drop-shadow-2xl z-10 text-center"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              Colección de <br className="md:hidden" />
-              <span className="italic font-normal text-5xl md:text-7xl text-white ml-0 md:ml-4">Carteras</span>
+              {t.categories.banner2CollectionOf} <br className="md:hidden" />
+              <span className="italic font-normal text-5xl md:text-7xl text-white ml-0 md:ml-4">{t.categories.banner2CollectionAccent}</span>
             </h3>
           </div>
         </div>
@@ -141,17 +143,17 @@ export default function CategoriasDestacadas() {
               <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-10 z-10">
                 <div className="overflow-hidden mb-2">
                   <span className="block text-[#7EC8BD] text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    Espacio Ideal
+                    {t.categories.card3Label}
                   </span>
                 </div>
                 <h3 className="text-white text-2xl md:text-3xl font-bold uppercase tracking-wider mb-6 drop-shadow-md" style={{ fontFamily: "var(--font-heading)" }}>
-                  Bolsos Grandes
+                  {t.categories.card3Title}
                 </h3>
                 <Link
                   to="/accesorios"
                   className="group/btn relative inline-flex items-center text-white text-xs font-bold tracking-[0.2em] uppercase no-underline w-fit"
                 >
-                  <span className="relative z-10 pb-1">Ver Diseño</span>
+                  <span className="relative z-10 pb-1">{t.categories.card3Cta}</span>
                   <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#1A9E8F] transition-all duration-500 group-hover/btn:w-full" />
                 </Link>
               </div>
@@ -174,17 +176,17 @@ export default function CategoriasDestacadas() {
               <div className="absolute inset-0 flex flex-col justify-end p-8 md:p-12 z-10">
                 <div className="overflow-hidden mb-2">
                   <span className="block text-[#7EC8BD] text-[10px] md:text-xs font-bold tracking-[0.4em] uppercase transform translate-y-full group-hover:translate-y-0 transition-transform duration-500">
-                    Arte Manual
+                    {t.categories.card4Label}
                   </span>
                 </div>
                 <h3 className="text-white text-3xl md:text-4xl font-bold uppercase tracking-widest mb-6 drop-shadow-md" style={{ fontFamily: "var(--font-heading)" }}>
-                  Cartera Trenzada
+                  {t.categories.card4Title}
                 </h3>
                 <Link
                   to="/accesorios"
                   className="group/btn relative inline-flex items-center text-white text-xs font-bold tracking-[0.2em] uppercase no-underline w-fit"
                 >
-                  <span className="relative z-10 pb-1">Descubrir</span>
+                  <span className="relative z-10 pb-1">{t.categories.card4Cta}</span>
                   <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#1A9E8F] transition-all duration-500 group-hover/btn:w-full" />
                 </Link>
               </div>

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Footer() {
+  const { t } = useLanguage();
   return (
     <>
       {/* ═══ FOOTER PRINCIPAL ═══ */}
@@ -23,19 +25,19 @@ export default function Footer() {
             {/* Navegación */}
             <div className="flex flex-col">
               <h4 className="text-[11px] font-semibold tracking-[0.25em] uppercase text-[#1A9E8F] mb-5">
-                Navegación
+                {t.footer.explore}
               </h4>
               <ul className="flex flex-col gap-3">
-                <li><Link to="/" className="text-white/50 hover:text-[#7EC8BD] text-sm no-underline transition-colors duration-300">Inicio</Link></li>
-                <li><Link to="/telas" className="text-white/50 hover:text-[#7EC8BD] text-sm no-underline transition-colors duration-300">Telas Artesanales</Link></li>
-                <li><Link to="/accesorios" className="text-white/50 hover:text-[#7EC8BD] text-sm no-underline transition-colors duration-300">Accesorios</Link></li>
+                <li><Link to="/" className="text-white/50 hover:text-[#7EC8BD] text-sm no-underline transition-colors duration-300">{t.nav.home}</Link></li>
+                <li><Link to="/telas" className="text-white/50 hover:text-[#7EC8BD] text-sm no-underline transition-colors duration-300">{t.nav.fabrics}</Link></li>
+                <li><Link to="/accesorios" className="text-white/50 hover:text-[#7EC8BD] text-sm no-underline transition-colors duration-300">{t.nav.accessories}</Link></li>
               </ul>
             </div>
 
             {/* Contacto */}
             <div className="flex flex-col">
               <h4 className="text-[11px] font-semibold tracking-[0.25em] uppercase text-[#1A9E8F] mb-5">
-                Contacto
+                {t.footer.contact}
               </h4>
               <div className="flex flex-col gap-3 text-sm">
                 <a href="https://wa.me/50370279536" target="_blank" rel="noopener noreferrer" className="text-white/50 hover:text-[#25D366] no-underline transition-colors duration-300 flex items-center gap-2">
@@ -65,7 +67,7 @@ export default function Footer() {
 
           {/* Copyright */}
           <div className="border-t border-white/10 pt-6 flex flex-col md:flex-row items-center justify-between gap-3">
-            <p className="text-white/30 text-xs">© 2026 Kosturé · Hecho con ❤️ en El Salvador</p>
+            <p className="text-white/30 text-xs">© 2026 Kosturé · {t.footer.madeWith} ❤️ {t.footer.inSV}</p>
             <p className="text-white/20 text-[10px]">Desarrollado por AxionCode</p>
           </div>
         </div>

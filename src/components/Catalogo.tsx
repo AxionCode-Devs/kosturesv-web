@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useLanguage } from "../context/LanguageContext";
 
 import bolsoTipoCartera from '../assets/bolso-tipo-cartera.webp';
 import bolsoCuadrado from '../assets/bolso-cuadrado.webp';
@@ -40,6 +41,7 @@ const mainCategories = [
 
 export default function Catalogo() {
   const [slideActivo, setSlideActivo] = useState(0);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -73,7 +75,7 @@ export default function Catalogo() {
             className="text-4xl md:text-6xl font-bold text-white tracking-widest drop-shadow-md uppercase mb-4 animate-[slideDown_0.5s_ease-out]"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            NUESTRO CATÁLOGO
+            {t.catalogo.bannerTitle}
           </h1>
           <div className="h-1 w-24 bg-[#1A9E8F] rounded-full animate-[fadeIn_1s_ease-out]"></div>
         </div>
@@ -95,7 +97,7 @@ export default function Catalogo() {
 
       <div className="pt-16 max-w-7xl mx-auto px-6">
         <p className="text-[#516375] text-center mb-16 max-w-2xl mx-auto">
-          Explora nuestra colección completa de productos hechos a mano. Cada pieza es única y diseñada con pasión.
+          {t.catalogo.description}
         </p>
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {mainCategories.map((item) => (
@@ -139,7 +141,7 @@ export default function Catalogo() {
                   {item.title}
                 </h3>
                 <div className="relative inline-flex items-center text-white/90 text-xs font-sans tracking-[0.1em] w-fit">
-                  <span className="relative z-10 pb-1">Ver Categoría</span>
+                  <span className="relative z-10 pb-1">{ t.catalogo.viewCategory }</span>
                   <span className="absolute bottom-0 left-0 w-0 h-[1px] bg-[#1A9E8F] transition-all duration-500 group-hover:w-full" />
                 </div>
               </div>

@@ -14,6 +14,7 @@ import CategoryView from "./components/CategoryView";
 import Tiendas from "./components/Tiendas";
 import ScrollToTop from "./components/ScrollToTop";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { LanguageProvider } from "./context/LanguageContext";
 
 function Home() {
   return (
@@ -30,6 +31,7 @@ function Home() {
 
 function App() {
   return (
+    <LanguageProvider>
     <Router>
       <ScrollToTop />
       <main className="w-full min-h-screen bg-[#FFFDF9] relative">
@@ -53,6 +55,7 @@ function App() {
         <WhatsAppButton />
       </main>
     </Router>
+    </LanguageProvider>
   );
 }
 

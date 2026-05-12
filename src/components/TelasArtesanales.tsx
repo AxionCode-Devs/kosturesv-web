@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import telarProcesoBanner from "../assets/telar-proceso.webp";
 import ScrollReveal from "./ScrollReveal";
+import { useLanguage } from "../context/LanguageContext";
 
 // 1. DEFINICIÓN DE INTERFACES (Arquitectura de la Información)
 // Explicación: Definimos un 'contrato' estricto para nuestro contenido editorial.
@@ -50,6 +51,7 @@ const telasData: TelaArtesanal[] = [
 const TelasArtesanales: React.FC = () => {
   const location = useLocation();
   const [telaExpandida, setTelaExpandida] = React.useState<string | null>(null);
+  const { t } = useLanguage();
 
   const toggleExpandir = (id: string) => {
     setTelaExpandida(telaExpandida === id ? null : id);
@@ -82,7 +84,7 @@ const TelasArtesanales: React.FC = () => {
             className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-wide drop-shadow-2xl mb-6 animate-[slideDown_0.8s_ease-out]"
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Las Telas
+            {t.telas.bannerTitle}
           </h1>
           <p className="text-lg md:text-xl text-white/90 font-light leading-relaxed max-w-2xl mx-auto animate-[fadeIn_1.5s_ease-out]">
             Descubre la historia, la textura y el alma detrás de cada hilo que da vida a nuestras creaciones.
@@ -103,9 +105,7 @@ const TelasArtesanales: React.FC = () => {
             Más que un material,<br /><span className="italic font-normal text-[#1A9E8F]">una identidad</span>
           </h2>
           <p className="text-lg md:text-xl text-gray-600 leading-relaxed">
-            En Kosture, no vemos la tela como un simple insumo. Cada corte representa horas de tradición, 
-            técnicas heredadas y una profunda conexión con nuestras raíces salvadoreñas. 
-            Esta sección es un homenaje a esos materiales.
+            {t.telas.introP}
           </p>
         </ScrollReveal>
       </div>
@@ -162,18 +162,18 @@ const TelasArtesanales: React.FC = () => {
                 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6 leading-tight"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                {tela.nombre}
+                {t.telas.fabrics[index]?.name || tela.nombre}
               </h3>
               
               <h4 className="text-xl md:text-2xl text-gray-500 font-serif italic mb-8">
-                "{tela.descripcionBreve}"
+                "{t.telas.fabrics[index]?.shortDesc || tela.descripcionBreve}"
               </h4>
               
               <div className="text-base lg:text-lg text-gray-600 leading-relaxed mb-10 opacity-90 transition-all duration-500 text-justify">
-                <p>{tela.historia}</p>
+                <p>{t.telas.fabrics[index]?.history || tela.historia}</p>
                 {telaExpandida === tela.id && (
                   <p className="mt-4 pt-4 border-t border-gray-200 animate-[fadeIn_0.5s_ease-out]">
-                    {tela.historiaExtendida}
+                    {t.telas.fabrics[index]?.extendedHistory || tela.historiaExtendida}
                   </p>
                 )}
               </div>
@@ -184,7 +184,7 @@ const TelasArtesanales: React.FC = () => {
                 className="self-start relative group inline-flex items-center text-[#1A9E8F] text-xs font-bold tracking-[0.2em] uppercase no-underline w-fit"
               >
                 <span className="relative z-10 pb-1 flex items-center gap-2">
-                  {telaExpandida === tela.id ? "Cerrar Historia" : "Leer Historia Completa"}
+                  {telaExpandida === tela.id ? t.telas.readLess : t.telas.readMore}
                   <svg 
                     className={`w-4 h-4 transform transition-transform duration-300 ${telaExpandida === tela.id ? '-rotate-90' : 'group-hover:translate-x-1'}`} 
                     fill="none" 

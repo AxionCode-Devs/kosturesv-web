@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function WhatsAppButton() {
   const [isHovered, setIsHovered] = useState(false);
+  const { t } = useLanguage();
   const phoneNumber = "50370279536";
-  const message = encodeURIComponent("¡Hola! Me gustaría conocer más sobre los productos de Kosturé 🧵");
+  const message = encodeURIComponent(t.whatsapp.defaultMsg);
 
   return (
     <a
@@ -13,7 +15,7 @@ export default function WhatsAppButton() {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       className="fixed bottom-6 right-6 z-50 flex items-center gap-3 no-underline group"
-      aria-label="Chatea con nosotros por WhatsApp"
+      aria-label={t.whatsapp.ariaLabel}
     >
       {/* Tooltip */}
       <span
@@ -21,7 +23,7 @@ export default function WhatsAppButton() {
           isHovered ? "opacity-100 translate-x-0" : "opacity-0 translate-x-4 pointer-events-none"
         }`}
       >
-        ¡Escríbenos! 💬
+        {t.whatsapp.tooltip}
       </span>
 
       {/* Botón */}

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import ScrollReveal from "./ScrollReveal";
+import { useLanguage } from "../context/LanguageContext";
 
 const heroImages = [
   "/imagenes/carrusel-inicio/e.webp",
@@ -16,6 +17,7 @@ export default function Hero() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const img1Ref = useRef<HTMLDivElement>(null);
   const img2Ref = useRef<HTMLDivElement>(null);
+  const { t } = useLanguage();
 
   useEffect(() => {
     setTimeout(() => setHeroLoaded(true), 100);
@@ -71,7 +73,7 @@ export default function Hero() {
               heroLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
           >
-            Artesanía Salvadoreña
+            {t.hero.subtitle}
           </span>
 
           <div
@@ -86,8 +88,8 @@ export default function Hero() {
             }`}
             style={{ fontFamily: "var(--font-heading)" }}
           >
-            Hecho en<br />
-            <span className="italic font-normal text-white/90">El Salvador</span>
+            {t.hero.titleLine1}<br />
+            <span className="italic font-normal text-white/90">{t.hero.titleLine2}</span>
           </h1>
 
           <p
@@ -95,7 +97,7 @@ export default function Hero() {
               heroLoaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            Detalles con Técnica artesanal que te acompañaran en tus aventuras
+            {t.hero.description}
           </p>
 
           <div
@@ -107,20 +109,20 @@ export default function Hero() {
               href="#nuestra-historia"
               className="bg-[#1A9E8F] hover:bg-[#157E73] text-white px-8 py-3.5 text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 rounded no-underline"
             >
-              Nuestra Historia
+              {t.hero.btnHistory}
             </a>
             <Link
               to="/accesorios"
               className="border-2 border-white/70 hover:border-white text-white px-8 py-3.5 text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 hover:bg-white/15 hover:-translate-y-0.5 rounded no-underline"
             >
-              Ver Productos
+              {t.hero.btnProducts}
             </Link>
           </div>
         </div>
 
         {/* Indicador de scroll */}
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-[bounceDown_2s_ease-in-out_infinite]">
-          <span className="text-white/50 text-[10px] tracking-[0.3em] uppercase">Scroll</span>
+          <span className="text-white/50 text-[10px] tracking-[0.3em] uppercase">{t.hero.scroll}</span>
           <svg className="w-5 h-5 text-white/50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 9l-7 7-7-7" />
           </svg>
@@ -153,7 +155,7 @@ export default function Hero() {
               className="w-full h-[450px] lg:h-[600px] object-cover rounded-xl shadow-lg transition-transform duration-700 group-hover:scale-[1.02]"
             />
             <div className="absolute -bottom-5 -right-3 md:right-6 bg-[#1A9E8F] text-white px-6 py-3 shadow-lg rounded">
-              <p className="text-xs tracking-[0.2em] uppercase font-semibold">Desde San Martín</p>
+              <p className="text-xs tracking-[0.2em] uppercase font-semibold">{t.hero.fromSanMartin}</p>
             </div>
           </div>
         </div>
@@ -162,7 +164,7 @@ export default function Hero() {
         <div className="w-full lg:w-1/2 flex flex-col justify-center">
           <ScrollReveal delay={100}>
             <span className="text-[11px] font-semibold text-[#1A9E8F] tracking-[0.3em] uppercase mb-3 block">
-              Nuestra Historia
+              {t.hero.historyLabel}
             </span>
           </ScrollReveal>
           <ScrollReveal delay={200}>
@@ -170,27 +172,17 @@ export default function Hero() {
               className="text-4xl md:text-5xl font-bold mb-8 text-gray-900 leading-tight"
               style={{ fontFamily: "var(--font-heading)" }}
             >
-              El encuentro que<br />
-              <span className="italic font-normal text-[#1A9E8F]">cambió todo</span>
+              {t.hero.historyTitle1}<br />
+              <span className="italic font-normal text-[#1A9E8F]">{t.hero.historyTitle2}</span>
             </h2>
           </ScrollReveal>
           <ScrollReveal delay={350}>
             <div className="space-y-5 text-gray-600 leading-relaxed text-base lg:text-lg max-w-xl text-justify">
               <p>
-                Kosture nació de un encuentro fortuito y un sueño compartido.
-                Karen, Rebeca y Olga, tres mujeres que repartían sus días entre
-                las responsabilidades del hogar y la crianza, se conocieron en un
-                curso de corte y confección impartido en la sede de Ciudad Mujer
-                en San Martín.
+                {t.hero.historyP1}
               </p>
               <p>
-                Allí, entre patrones, telas y el constante ritmo de las máquinas,
-                no solo aprendieron un oficio técnico; encontraron una vocación.
-                Lo que comenzó como un pequeño proyecto individual se convirtió
-                rápidamente en una aspiración colectiva: la idea de formar una
-                microempresa propia que les permitiera no solo obtener ingresos
-                para sus familias, sino también demostrar su capacidad de gestión
-                y creación.
+                {t.hero.historyP2}
               </p>
             </div>
           </ScrollReveal>
@@ -207,49 +199,30 @@ export default function Hero() {
                 className="text-3xl md:text-4xl font-bold mb-6 text-gray-900 leading-tight"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
-                Del esfuerzo a la<br />
-                <span className="italic font-normal text-[#1A9E8F]">consolidación</span>
+                {t.hero.consolidationTitle1}<br />
+                <span className="italic font-normal text-[#1A9E8F]">{t.hero.consolidationTitle2}</span>
               </h2>
             </ScrollReveal>
             <ScrollReveal delay={200}>
               <div className="space-y-5 text-gray-600 leading-relaxed text-base lg:text-lg max-w-xl text-justify mb-8">
                 <p>
-                  Los inicios no fueron sencillos. Con una sola máquina de coser y
-                  aportaciones modestas de cada una, comenzaron a confeccionar los
-                  primeros productos que ofrecían entre vecinos y conocidos. Sin
-                  embargo, su empeño llamó la atención de las autoridades de Ciudad
-                  Mujer, quienes les brindaron la oportunidad de exponer sus
-                  creaciones en ferias. Ese fue el punto de inflexión.
+                  {t.hero.consolidationP1}
                 </p>
                 <p>
-                  En cuestión de meses, gracias a la capacitación recibida en temas
-                  de emprendimiento, contabilidad y creación de marca, lograron
-                  multiplicar su capacidad productiva. Lo que antes era un trabajo
-                  de costura en menor escala, se profesionalizó hasta convertirse en
-                  una microempresa capaz de gestionar carteras de clientes formales
-                  y participar en licitaciones de alto nivel.
+                  {t.hero.consolidationP2}
                 </p>
 
                 <h3
                   className="text-2xl font-bold text-gray-900 pt-4"
                   style={{ fontFamily: "var(--font-heading)" }}
                 >
-                  Nuestra esencia hoy
+                  {t.hero.essenceTitle}
                 </h3>
                 <p>
-                  Hoy, Kosture es mucho más que ropa de cama y accesorios; es el
-                  testimonio vivo de que, con acompañamiento y determinación, las
-                  mujeres emprendedoras pueden romper barreras. Cada una de nuestras
-                  piezas es elaborada con técnicas artesanales que preservan nuestra
-                  identidad y valoran el trabajo hecho a mano en El Salvador.
+                  {t.hero.essenceP1}
                 </p>
                 <p>
-                  Para nosotras, Kosture es una bendición y una invitación a otras
-                  mujeres a creer en su propio potencial. Al elegir uno de nuestros
-                  productos, no solo te llevas un artículo de calidad a casa, sino
-                  que también apoyas un proyecto que transforma vidas, fortalece
-                  nuestra cultura y celebra la maestría de manos salvadoreñas que
-                  decidieron, hace tiempo, empezar a soñar en grande.
+                  {t.hero.essenceP2}
                 </p>
               </div>
             </ScrollReveal>
@@ -258,7 +231,7 @@ export default function Hero() {
                 to="/accesorios"
                 className="bg-[#1A9E8F] hover:bg-[#157E73] text-white px-10 py-3.5 w-fit text-sm font-semibold tracking-[0.15em] uppercase transition-all duration-300 hover:shadow-lg hover:-translate-y-0.5 rounded no-underline"
               >
-                Ver Productos
+                {t.hero.btnProducts}
               </Link>
             </ScrollReveal>
           </div>
