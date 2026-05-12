@@ -82,7 +82,7 @@ export const en: typeof es = {
       },
       {
         title: "100% Salvadoran",
-        description: "Proudly crafted in El Salvador, preserving our cultural identity.",
+        description: "Proudly crafted in El Salvador, made by the hands of Salvadoran women, preserving our cultural identity.",
       },
       {
         title: "Natural Materials",

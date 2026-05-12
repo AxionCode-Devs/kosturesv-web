@@ -142,35 +142,25 @@ export default function Navbar() {
             ))}
           </ul>
 
-          {/* LANGUAGE TOGGLE + HAMBURGER */}
+          {/* LANGUAGE TOGGLE (Desktop only) + HAMBURGER */}
           <div className="absolute right-6 top-1/2 -translate-y-1/2 flex items-center gap-4">
+            {/* Pill toggle — only on desktop */}
             <button
               onClick={toggleLang}
-              className="group relative flex items-center gap-1.5 bg-gray-100 hover:bg-gray-200/80 rounded-full p-[3px] transition-all duration-300 shadow-sm hover:shadow-md"
+              className="hidden md:flex group relative items-center gap-1.5 bg-gray-100 hover:bg-gray-200/80 rounded-full p-[3px] transition-all duration-300 shadow-sm hover:shadow-md"
               aria-label="Change language"
             >
-              {/* Globe icon */}
               <span className="flex items-center justify-center w-7 h-7 rounded-full text-[#1A9E8F]">
                 <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
                   <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
                 </svg>
               </span>
-              {/* ES pill */}
               <span className={`relative z-10 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider transition-all duration-300 ${
-                lang === 'es' 
-                  ? 'bg-[#1A9E8F] text-white shadow-sm' 
-                  : 'text-gray-400 hover:text-gray-600'
-              }`}>
-                ES
-              </span>
-              {/* EN pill */}
+                lang === 'es' ? 'bg-[#1A9E8F] text-white shadow-sm' : 'text-gray-400 hover:text-gray-600'
+              }`}>ES</span>
               <span className={`relative z-10 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider transition-all duration-300 ${
-                lang === 'en' 
-                  ? 'bg-[#1A9E8F] text-white shadow-sm' 
-                  : 'text-gray-400 hover:text-gray-600'
-              }`}>
-                EN
-              </span>
+                lang === 'en' ? 'bg-[#1A9E8F] text-white shadow-sm' : 'text-gray-400 hover:text-gray-600'
+              }`}>EN</span>
             </button>
 
             {/* HAMBURGER */}
@@ -203,6 +193,35 @@ export default function Navbar() {
                 {link.label}
               </Link>
             ))}
+
+            {/* LANGUAGE TOGGLE inside mobile menu */}
+            <div className="mt-8 pt-6 border-t border-gray-200">
+              <p className="text-[10px] font-semibold tracking-[0.25em] uppercase text-gray-400 mb-3">
+                {lang === 'es' ? 'Idioma' : 'Language'}
+              </p>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => { toggleLang(); }}
+                  className={`flex-1 py-2.5 rounded-lg text-xs font-bold tracking-wider uppercase transition-all duration-300 ${
+                    lang === 'es'
+                      ? 'bg-[#1A9E8F] text-white shadow-md'
+                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  }`}
+                >
+                  Español
+                </button>
+                <button
+                  onClick={() => { toggleLang(); }}
+                  className={`flex-1 py-2.5 rounded-lg text-xs font-bold tracking-wider uppercase transition-all duration-300 ${
+                    lang === 'en'
+                      ? 'bg-[#1A9E8F] text-white shadow-md'
+                      : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
+                  }`}
+                >
+                  English
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       )}

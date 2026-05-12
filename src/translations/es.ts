@@ -80,7 +80,7 @@ export const es = {
       },
       {
         title: "100% Salvadoreño",
-        description: "Orgullosamente elaborado en El Salvador, preservando nuestra identidad cultural.",
+        description: "Orgullosamente elaborado en El Salvador, hecha por manos de salvadoreñas, preservando nuestra identidad cultural.",
       },
       {
         title: "Materiales Naturales",
