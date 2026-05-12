@@ -146,12 +146,31 @@ export default function Navbar() {
           <div className="absolute right-6 top-1/2 -translate-y-1/2 flex items-center gap-4">
             <button
               onClick={toggleLang}
-              className="flex items-center gap-1 text-[10px] font-bold tracking-widest uppercase text-[#2A3B4C] hover:text-[#1A9E8F] transition-colors duration-300"
+              className="group relative flex items-center gap-1.5 bg-gray-100 hover:bg-gray-200/80 rounded-full p-[3px] transition-all duration-300 shadow-sm hover:shadow-md"
               aria-label="Change language"
             >
-              <span className={lang === 'es' ? 'text-[#1A9E8F]' : 'text-[#2A3B4C]/40'}>ES</span>
-              <span className="text-gray-300">|</span>
-              <span className={lang === 'en' ? 'text-[#1A9E8F]' : 'text-[#2A3B4C]/40'}>EN</span>
+              {/* Globe icon */}
+              <span className="flex items-center justify-center w-7 h-7 rounded-full text-[#1A9E8F]">
+                <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" strokeWidth="2">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9" />
+                </svg>
+              </span>
+              {/* ES pill */}
+              <span className={`relative z-10 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider transition-all duration-300 ${
+                lang === 'es' 
+                  ? 'bg-[#1A9E8F] text-white shadow-sm' 
+                  : 'text-gray-400 hover:text-gray-600'
+              }`}>
+                ES
+              </span>
+              {/* EN pill */}
+              <span className={`relative z-10 px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider transition-all duration-300 ${
+                lang === 'en' 
+                  ? 'bg-[#1A9E8F] text-white shadow-sm' 
+                  : 'text-gray-400 hover:text-gray-600'
+              }`}>
+                EN
+              </span>
             </button>
 
             {/* HAMBURGER */}
