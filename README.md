@@ -14,13 +14,13 @@
 
 La interfaz fue diseñada con un enfoque moderno, minimalista y de alta conversión, priorizando la estética visual y la facilidad de navegación para el usuario a través de todas sus secciones:
 
-![Kosture SV - Inicio]<img width="1920" height="1440" alt="566shots_so" src="https://github.com/user-attachments/assets/d64df5c8-cd96-4df4-a601-ce7b4872c30f" />
+[Kosture SV - Inicio]<img width="1920" height="1440" alt="566shots_so" src="https://github.com/user-attachments/assets/d64df5c8-cd96-4df4-a601-ce7b4872c30f" />
 
 
-![Kosture SV - Catálogo]<img width="1920" height="1440" alt="914shots_so" src="https://github.com/user-attachments/assets/3d9c6313-30b9-4405-aa87-6be86428c6f8" />
+[Kosture SV - Catálogo]<img width="1920" height="1440" alt="914shots_so" src="https://github.com/user-attachments/assets/3d9c6313-30b9-4405-aa87-6be86428c6f8" />
 
 
-![Kosture SV - Tiendas]<img width="1920" height="1440" alt="54shots_so" src="https://github.com/user-attachments/assets/8382eb40-b630-4001-ad6a-d102c7c5dd7c" />
+[Kosture SV - Tiendas]<img width="1920" height="1440" alt="54shots_so" src="https://github.com/user-attachments/assets/8382eb40-b630-4001-ad6a-d102c7c5dd7c" />
 
 
 ---
